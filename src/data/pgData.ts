@@ -18,6 +18,19 @@ export const whatsappLink = (msg = "Hi, I'm interested in Pritgasu PG Services."
 export const callLink = (who: "sudhir" | "gayatri" = "sudhir") =>
   `tel:+91${CONTACTS[who].phone}`;
 
+export type AvailabilityStatus = "Available" | "Limited Availability" | "Fully Occupied";
+
+export interface NearbyLocation {
+  type: "college" | "office" | "hospital" | "transport" | "market";
+  name: string;
+  distance: string;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface PGProperty {
   id: string;
   name: string;
@@ -25,8 +38,22 @@ export interface PGProperty {
   address: string;
   description: string;
   image: string;
+  images: string[];
   startingPrice: number;
+  availability: AvailabilityStatus;
+  nearbyLocations: NearbyLocation[];
 }
+
+const defaultNearby: NearbyLocation[] = [
+  { type: "college", name: "Gujarat University", distance: "3 km" },
+  { type: "college", name: "LD Engineering College", distance: "4 km" },
+  { type: "office", name: "ISCON Mega Mall", distance: "1.5 km" },
+  { type: "hospital", name: "Sterling Hospital", distance: "2 km" },
+  { type: "transport", name: "Jodhpur Cross Roads BRTS", distance: "1 km" },
+  { type: "market", name: "Satellite Market", distance: "0.5 km" },
+];
+
+const defaultImages = Array.from({ length: 6 }, () => "/placeholder.svg");
 
 export const PG_PROPERTIES: PGProperty[] = [
   {
@@ -36,7 +63,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "23, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
     description: "Spacious 5 BHK Bunglow with premium amenities",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Available",
+    nearbyLocations: defaultNearby,
   },
   {
     id: "jodhpur-kunj-11",
@@ -45,7 +75,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "11, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
     description: "Well-maintained PG with homely atmosphere",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Limited Availability",
+    nearbyLocations: defaultNearby,
   },
   {
     id: "jodhpur-kunj-29",
@@ -54,7 +87,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "29, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
     description: "Comfortable PG in prime Jodhpur Kunj location",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Available",
+    nearbyLocations: defaultNearby,
   },
   {
     id: "arunprakash-b34",
@@ -63,7 +99,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "B 34, Third Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
     description: "Third floor flat with great ventilation and views",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Fully Occupied",
+    nearbyLocations: defaultNearby,
   },
   {
     id: "arunprakash-b33",
@@ -72,7 +111,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "B 33, Third Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
     description: "Well-furnished rooms with modern amenities",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Limited Availability",
+    nearbyLocations: defaultNearby,
   },
   {
     id: "arunprakash-a1",
@@ -81,7 +123,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "A 1, Ground Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
     description: "Convenient ground floor access with all facilities",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Available",
+    nearbyLocations: defaultNearby,
   },
   {
     id: "sarthi-c43",
@@ -90,7 +135,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "C 43, Sarthi Avenue, Satellite, Ahmedabad 380015",
     description: "Modern PG in Sarthi Avenue complex",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Available",
+    nearbyLocations: defaultNearby,
   },
   {
     id: "vasupujya-10",
@@ -99,8 +147,22 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "10, Vasupujya Row House, Satellite, Ahmedabad 380015",
     description: "Row house PG with spacious common areas",
     image: "/placeholder.svg",
+    images: defaultImages,
     startingPrice: 8500,
+    availability: "Limited Availability",
+    nearbyLocations: defaultNearby,
   },
+];
+
+export const FAQ_ITEMS: FAQItem[] = [
+  { question: "What is the minimum stay duration?", answer: "The minimum stay duration is 3 months. We offer flexible lease terms for students and working professionals." },
+  { question: "Is food included in the rent?", answer: "Yes! Three home-cooked Gujarati meals (breakfast, lunch, and dinner) are included in the monthly rent." },
+  { question: "What are the payment options?", answer: "We accept UPI, bank transfer, and cash payments. Rent is due on the 1st of every month." },
+  { question: "Is there a security deposit?", answer: "Yes, a refundable security deposit of 2 months' rent is required at the time of move-in." },
+  { question: "Are visitors allowed?", answer: "Visitors are allowed in common areas during daytime hours only. Overnight guests are not permitted." },
+  { question: "What is the gate closing time?", answer: "The gate closes at 11:00 PM. Late entry can be arranged by informing the management in advance." },
+  { question: "Is parking available?", answer: "Yes, parking space is available for two-wheelers and four-wheelers at select PG locations." },
+  { question: "Can I choose my roommate?", answer: "Yes, if you're joining with a friend, we can arrange for you to share a room together, subject to availability." },
 ];
 
 export interface RoomType {
