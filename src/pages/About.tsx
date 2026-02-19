@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, Heart, Users } from "lucide-react";
 import { BRAND, CONTACTS } from "@/data/pgData";
+import ReadyToMoveIn from "@/components/ReadyToMoveIn";
 
 const About = () => (
   <>
@@ -38,17 +39,9 @@ const About = () => (
             { icon: <Heart className="h-8 w-8" />, title: "Homely Care", desc: "We treat every resident like family with personal attention" },
             { icon: <Users className="h-8 w-8" />, title: "Community", desc: "A vibrant community of students and working professionals" },
           ].map((v, i) => (
-            <motion.div
-              key={v.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="text-center p-6 rounded-lg bg-muted"
-            >
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 text-secondary mb-3">
-                {v.icon}
-              </div>
+            <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
+              className="text-center p-6 rounded-lg bg-muted">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 text-secondary mb-3">{v.icon}</div>
               <h3 className="font-heading font-semibold mb-2">{v.title}</h3>
               <p className="text-sm text-muted-foreground">{v.desc}</p>
             </motion.div>
@@ -72,6 +65,8 @@ const About = () => (
         </div>
       </div>
     </section>
+
+    <ReadyToMoveIn />
   </>
 );
 

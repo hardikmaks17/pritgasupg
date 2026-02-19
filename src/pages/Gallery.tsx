@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { GALLERY_IMAGES } from "@/data/pgData";
+import ReadyToMoveIn from "@/components/ReadyToMoveIn";
 
 const CATEGORIES = ["all", "rooms", "building", "facilities", "food"] as const;
 
@@ -24,7 +25,6 @@ const Gallery = () => {
 
       <section className="py-10 bg-muted">
         <div className="container">
-          {/* Filters */}
           <div className="flex flex-wrap gap-2 mb-8">
             {CATEGORIES.map((c) => (
               <button
@@ -39,7 +39,6 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {filtered.map((img, i) => (
               <motion.div
@@ -55,6 +54,8 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      <ReadyToMoveIn />
     </>
   );
 };

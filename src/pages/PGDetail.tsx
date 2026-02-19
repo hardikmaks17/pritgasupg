@@ -1,19 +1,33 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { MapPin, Phone, MessageCircle, ChevronLeft, CheckCircle } from "lucide-react";
+import { MapPin, Phone, MessageCircle, ChevronLeft, CheckCircle, GraduationCap, Building2, HeartPulse, Bus, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import {
-  PG_PROPERTIES, ROOM_TYPES, FACILITIES, HOUSE_RULES,
+  PG_PROPERTIES, ROOM_TYPES, FACILITIES, HOUSE_RULES, FAQ_ITEMS,
   CONTACTS, whatsappLink, callLink,
 } from "@/data/pgData";
+import AvailabilityBadge from "@/components/AvailabilityBadge";
+import ReadyToMoveIn from "@/components/ReadyToMoveIn";
+
+const nearbyIcons: Record<string, React.ReactNode> = {
+  college: <GraduationCap className="h-4 w-4" />,
+  office: <Building2 className="h-4 w-4" />,
+  hospital: <HeartPulse className="h-4 w-4" />,
+  transport: <Bus className="h-4 w-4" />,
+  market: <ShoppingBag className="h-4 w-4" />,
+};
 
 const PGDetail = () => {
   const { id } = useParams();
   const pg = PG_PROPERTIES.find((p) => p.id === id);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [selectedPg, setSelectedPg] = useState(id || "");
 
   if (!pg) {
     return (
@@ -38,7 +52,10 @@ const PGDetail = () => {
           <Link to="/our-pgs" className="inline-flex items-center gap-1 text-sm opacity-80 hover:opacity-100 mb-3">
             <ChevronLeft className="h-4 w-4" /> Back to Our PGs
           </Link>
-          <h1 className="text-2xl md:text-3xl font-heading font-extrabold">{pg.name}</h1>
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-2xl md:text-3xl font-heading font-extrabold">{pg.name}</h1>
+            <AvailabilityBadge status={pg.availability} />
+          </div>
           <p className="flex items-center gap-1 mt-1 opacity-90 text-sm"><MapPin className="h-4 w-4" /> {pg.address}</p>
         </div>
       </section>
@@ -47,13 +64,21 @@ const PGDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Gallery */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg overflow-hidden">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="aspect-video bg-accent">
-                  <img src="/placeholder.svg" alt={`${pg.name} - Photo ${i + 1}`} className="w-full h-full object-cover" />
-                </div>
-              ))}
+            {/* Image Carousel */}
+            <div className="px-10">
+              <Carousel opts={{ loop: true }}>
+                <CarouselContent>
+                  {pg.images.map((src, i) => (
+                    <CarouselItem key={i}>
+                      <div className="aspect-video rounded-lg overflow-hidden bg-accent">
+                        <img src={src} alt={`${pg.name} - Photo ${i + 1}`} className="w-full h-full object-cover" />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
 
             {/* Description */}
@@ -104,6 +129,37 @@ const PGDetail = () => {
               </ul>
             </div>
 
+            {/* Nearby Locations */}
+            <div>
+              <h2 className="text-xl font-heading font-bold text-secondary mb-4">Nearby Locations</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {pg.nearbyLocations.map((loc) => (
+                  <div key={loc.name} className="flex items-center gap-3 p-3 rounded-lg bg-muted">
+                    <div className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center text-secondary shrink-0">
+                      {nearbyIcons[loc.type]}
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">{loc.name}</p>
+                      <p className="text-xs text-muted-foreground capitalize">{loc.type} · {loc.distance}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* FAQ */}
+            <div>
+              <h2 className="text-xl font-heading font-bold text-secondary mb-4">Frequently Asked Questions</h2>
+              <Accordion type="single" collapsible className="w-full">
+                {FAQ_ITEMS.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`}>
+                    <AccordionTrigger className="text-left text-sm">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+
             {/* Map */}
             <div>
               <h2 className="text-xl font-heading font-bold text-secondary mb-4">Location</h2>
@@ -124,7 +180,6 @@ const PGDetail = () => {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Inquiry Form */}
             <Card className="sticky top-20">
               <CardContent className="pt-6 space-y-4">
                 <h3 className="font-heading font-bold text-lg text-secondary">Enquire Now</h3>
@@ -147,6 +202,19 @@ const PGDetail = () => {
                     <div>
                       <Label htmlFor="movein">Move-in Date</Label>
                       <Input id="movein" type="date" required />
+                    </div>
+                    <div>
+                      <Label htmlFor="preferred-pg">Preferred PG</Label>
+                      <Select value={selectedPg} onValueChange={setSelectedPg}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a PG" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {PG_PROPERTIES.map((p) => (
+                            <SelectItem key={p.id} value={p.id}>{p.shortName} — {p.name.split("—")[1]?.trim()}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
                     <Button type="submit" className="w-full">Submit Enquiry</Button>
                   </form>
@@ -174,6 +242,8 @@ const PGDetail = () => {
           </div>
         </div>
       </div>
+
+      <ReadyToMoveIn />
     </>
   );
 };

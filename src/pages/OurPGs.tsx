@@ -4,6 +4,8 @@ import { MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PG_PROPERTIES } from "@/data/pgData";
+import AvailabilityBadge from "@/components/AvailabilityBadge";
+import ReadyToMoveIn from "@/components/ReadyToMoveIn";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,8 +25,9 @@ const OurPGs = () => (
         {PG_PROPERTIES.map((pg, i) => (
           <motion.div key={pg.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <Card className="overflow-hidden hover:shadow-lg transition-shadow group h-full">
-              <div className="aspect-video bg-accent overflow-hidden">
+              <div className="aspect-video bg-accent overflow-hidden relative">
                 <img src={pg.image} alt={pg.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <AvailabilityBadge status={pg.availability} className="absolute top-3 right-3" />
               </div>
               <CardContent className="pt-4 space-y-2">
                 <h3 className="font-heading font-semibold">{pg.name}</h3>
@@ -40,6 +43,7 @@ const OurPGs = () => (
         ))}
       </div>
     </section>
+    <ReadyToMoveIn />
   </>
 );
 
