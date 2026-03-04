@@ -37,6 +37,26 @@ const TestimonialsSection = () => {
       <div className="container">
         <SectionTitle badge="Reviews" title="What Our Residents Say" />
 
+        {/* Google rating summary */}
+        <div className="flex flex-col items-center mt-6 mb-12 text-center">
+
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-3xl font-bold text-foreground">4.9+</span>
+
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+              ))}
+            </div>
+          </div>
+
+          <p className="text-sm text-muted-foreground">
+            Based on many happy residents
+          </p>
+
+        </div>
+
+        {/* Testimonial card */}
         <div className="relative max-w-2xl mx-auto">
           {/* Navigation */}
           <button
@@ -106,13 +126,20 @@ const TestimonialsSection = () => {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
-            <Button color="primary" asChild>
-              <a href={mainReviewLink()} target="_blank" rel="noopener noreferrer">
-                Read all our reviews<ArrowRight className="ml-1 h-4 w-4" />
-              </a>
-            </Button>
-          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <Button asChild>
+            <a
+              href={mainReviewLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read all Google Reviews
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
