@@ -21,7 +21,7 @@ export const CONTACTS = {
   gayatri: { name: "Gayatri Brahmbhatt", phone: "9737729780", label: "97377 29780" },
 };
 
-export const whatsappLink = (msg = "Hi, I'm interested in Pritgasu PG Services.") =>
+export const whatsappLink = (msg = "Hi, I came across the Pritgasu PG Services website and I'm interested in your PG accommodation. Could you please share more details and availability?") =>
   `https://wa.me/91${CONTACTS.gayatri.phone}?text=${encodeURIComponent(msg)}`;
 
 export const callLink = (who: "sudhir" | "gayatri" = "gayatri") =>
