@@ -17,7 +17,7 @@ const values = [
   { icon: <Users className="h-7 w-7" />, title: "Community", desc: "A vibrant community of students and working professionals" },
   { icon: <Award className="h-7 w-7" />, title: "Quality Living", desc: "Clean, well-maintained rooms with all modern amenities" },
   { icon: <Clock className="h-7 w-7" />, title: "10+ Years", desc: "Over a decade of trusted service in PG accommodation" },
-  { icon: <Home className="h-7 w-7" />, title: "8 Properties", desc: "Multiple locations across Satellite, Ahmedabad" },
+  { icon: <Home className="h-7 w-7" />, title: "8 Properties", desc: "Multiple locations across Satellite and Remdev Nagar, Ahmedabad" },
 ];
 
 const About = () => (
@@ -61,8 +61,8 @@ const About = () => (
               strive to create a welcoming and homely environment.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              With 8 strategically located properties in the Satellite area, we offer a variety of room options
-              to suit every budget — from AC and Non-AC standard rooms to drawing rooms. All our PGs come equipped
+              With 8 strategically located properties in the Satellite and Ramdevnagar area, we offer a variety of room options
+              to suit every budget — from AC and Non-AC premium rooms to drawing rooms. All our PGs come equipped
               with essential amenities including WiFi, housekeeping, laundry, and three home-cooked Gujarati meals daily.
             </p>
           </motion.div>

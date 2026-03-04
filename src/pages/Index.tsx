@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   BRAND, PG_PROPERTIES, ROOM_TYPES, FACILITIES, MEAL_PLAN,
-  HIGHLIGHTS, whatsappLink, callLink,
+  HIGHLIGHTS, whatsappLink,
 } from "@/data/pgData";
 import AvailabilityBadge from "@/components/AvailabilityBadge";
 import ReadyToMoveIn from "@/components/ReadyToMoveIn";
@@ -69,7 +69,6 @@ const Index = () => {
               <Button size="lg" asChild className="bg-green-600 hover:bg-green-700 text-white">
                 <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"><MessageCircle className="h-4 w-4" /> WhatsApp Now</a>
               </Button>
-              <Button size="lg" variant="outline" asChild><a href={callLink()}><Phone className="h-4 w-4" /> Call Now</a></Button>
             </div>
           </motion.div>
         </div>
@@ -98,7 +97,7 @@ const Index = () => {
       {/* Our PGs Preview */}
       <section className="py-16 bg-muted">
         <div className="container">
-          <SectionTitle badge="Properties" title="Our PG Locations" subtitle="8 well-maintained properties across Satellite, Ahmedabad" />
+          <SectionTitle badge="Properties" title="Our PG Locations" subtitle="8 well-maintained properties across Satellite and Ramdev Nagar, Ahmedabad" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {PG_PROPERTIES.map((pg, i) => (
               <motion.div key={pg.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
@@ -112,7 +111,7 @@ const Index = () => {
                   </div>
                   <CardContent className="pt-4 space-y-2">
                     <h3 className="font-heading font-semibold text-sm leading-tight">{pg.name}</h3>
-                    <p className="text-xs text-muted-foreground flex items-center gap-1"><MapPin className="h-3 w-3" /> {pg.address.split(",")[0]}</p>
+                    <p className="text-xs text-muted-foreground flex items-center gap-1"><MapPin className="h-3 w-3 shrink-0 hidden" /> {pg.address}</p>
                     <div className="flex items-center justify-between pt-1">
                       <span className="text-sm font-bold text-secondary">₹{pg.startingPrice.toLocaleString()}<span className="text-xs font-normal text-muted-foreground">/mo</span></span>
                       <Button size="sm" variant="outline" asChild className="text-xs h-7"><Link to={`/pg/${pg.id}`}>Details</Link></Button>

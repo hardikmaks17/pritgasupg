@@ -9,11 +9,11 @@ import pgFood from "@/assets/pg-food.jpg";
 
 export const BRAND = {
   name: "Pritgasu PG Services",
-  tagline: "Premium PG Accommodation in Satellite, Ahmedabad",
-  subtitle: "Safe, Comfortable & Affordable PG for Students & Working Professionals",
-  area: "Satellite, Ahmedabad 380015",
+  tagline: "Affordable PG Accommodation in Satellite, Ahmedabad",
+  subtitle: "Safe, Comfortable & Trusted PG for Students & Working Professionals",
+  area: "A-1, Ground Floor, Arun Prakash Flats, Nr Saibaba Temple, Nr Mocca, Satellite, Ahmedabad, 380015",
   experience: "10+",
-  email: "gayatrisbarot111@gmail.com",
+  email: "pritgasupg@gmail.com",
 };
 
 export const CONTACTS = {
@@ -66,22 +66,10 @@ const pgImages = [pgRoom1, pgRoom2, pgRoom3, pgBuilding1, pgDining, pgFacility];
 
 export const PG_PROPERTIES: PGProperty[] = [
   {
-    id: "jodhpur-kunj-23",
-    name: "Pritgasu PG — Jodhpur Kunj #23",
-    shortName: "JK-23",
-    address: "23, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
-    description: "Spacious 5 BHK Bunglow with premium amenities",
-    image: pgBuilding1,
-    images: pgImages,
-    startingPrice: 8500,
-    availability: "Available",
-    nearbyLocations: defaultNearby,
-  },
-  {
     id: "jodhpur-kunj-11",
     name: "Pritgasu PG — Jodhpur Kunj #11",
     shortName: "JK-11",
-    address: "11, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
+    address: "11, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Well-maintained PG with homely atmosphere",
     image: pgRoom1,
     images: pgImages,
@@ -90,10 +78,22 @@ export const PG_PROPERTIES: PGProperty[] = [
     nearbyLocations: defaultNearby,
   },
   {
+    id: "jodhpur-kunj-23",
+    name: "Pritgasu PG — Jodhpur Kunj #23",
+    shortName: "JK-23",
+    address: "23, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
+    description: "Spacious 5 BHK Bunglow with premium amenities",
+    image: pgBuilding1,
+    images: pgImages,
+    startingPrice: 8500,
+    availability: "Available",
+    nearbyLocations: defaultNearby,
+  },
+  {
     id: "jodhpur-kunj-29",
     name: "Pritgasu PG — Jodhpur Kunj #29",
     shortName: "JK-29",
-    address: "29, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
+    address: "29, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Comfortable PG in prime Jodhpur Kunj location",
     image: pgRoom2,
     images: pgImages,
@@ -102,34 +102,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     nearbyLocations: defaultNearby,
   },
   {
-    id: "arunprakash-b34",
-    name: "Pritgasu PG — Arunprakash B34",
-    shortName: "AP-B34",
-    address: "B 34, Third Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
-    description: "Third floor flat with great ventilation and views",
-    image: pgRoom3,
-    images: pgImages,
-    startingPrice: 8500,
-    availability: "Fully Occupied",
-    nearbyLocations: defaultNearby,
-  },
-  {
-    id: "arunprakash-b33",
-    name: "Pritgasu PG — Arunprakash B33",
-    shortName: "AP-B33",
-    address: "B 33, Third Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
-    description: "Well-furnished rooms with modern amenities",
-    image: pgDining,
-    images: pgImages,
-    startingPrice: 8500,
-    availability: "Limited Availability",
-    nearbyLocations: defaultNearby,
-  },
-  {
-    id: "arunprakash-a1",
-    name: "Pritgasu PG — Arunprakash A1",
+    id: "arun-prakash-a1",
+    name: "Pritgasu PG — Arun Prakash A1",
     shortName: "AP-A1",
-    address: "A 1, Ground Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
+    address: "A-1, Ground Floor, Arun Prakash Flats, Nr Saibaba Temple, Nr Mocca, Satellite, Ahmedabad, 380015.",
     description: "Convenient ground floor access with all facilities",
     image: pgBuilding2,
     images: pgImages,
@@ -138,10 +114,34 @@ export const PG_PROPERTIES: PGProperty[] = [
     nearbyLocations: defaultNearby,
   },
   {
+    id: "arun-prakash-b33",
+    name: "Pritgasu PG — Arun Prakash B33",
+    shortName: "AP-B33",
+    address: "B-33, Third Floor, Arun Prakash Flats, Nr Saibaba Temple, Nr Mocca, Satellite, Ahmedabad, 380015.",
+    description: "Well-furnished rooms with modern amenities",
+    image: pgDining,
+    images: pgImages,
+    startingPrice: 8500,
+    availability: "Limited Availability",
+    nearbyLocations: defaultNearby,
+  },
+  {
+    id: "arun-prakash-b34",
+    name: "Pritgasu PG — Arun Prakash B34",
+    shortName: "AP-B34",
+    address: "B-33, Third Floor, Arun Prakash Flats, Nr Saibaba Temple, Nr Mocca, Satellite, Ahmedabad, 380015.",
+    description: "Third floor flat with great ventilation and views",
+    image: pgRoom3,
+    images: pgImages,
+    startingPrice: 8500,
+    availability: "Limited Availability",
+    nearbyLocations: defaultNearby,
+  },
+  {
     id: "sarthi-c43",
     name: "Pritgasu PG — Sarthi Avenue C43",
     shortName: "SA-C43",
-    address: "C 43, Sarthi Avenue, Satellite, Ahmedabad 380015",
+    address: "C-43, Sarthi Avenue, Nr Le Meridien Hotel, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Modern PG in Sarthi Avenue complex",
     image: pgFacility,
     images: pgImages,
@@ -151,9 +151,9 @@ export const PG_PROPERTIES: PGProperty[] = [
   },
   {
     id: "vasupujya-10",
-    name: "Pritgasu PG — Vasupujya #10",
+    name: "Pritgasu PG — Vasupujya Row House #10",
     shortName: "VP-10",
-    address: "10, Vasupujya Row House, Satellite, Ahmedabad 380015",
+    address: "10, Vasupujya Row House, Opp Punchgini Apartment, Opp Satyagraha Chhavni Road, Nr Le Meridien Hotel, Satellite, Ahmedabad, 380015.",
     description: "Row house PG with spacious common areas",
     image: pgRoom1,
     images: pgImages,
@@ -164,13 +164,13 @@ export const PG_PROPERTIES: PGProperty[] = [
 ];
 
 export const FAQ_ITEMS: FAQItem[] = [
-  { question: "What is the minimum stay duration?", answer: "The minimum stay duration is 3 months. We offer flexible lease terms for students and working professionals." },
+  { question: "What is the minimum stay duration?", answer: "The minimum stay duration is 1 month. We offer flexible lease terms for students and working professionals." },
   { question: "Is food included in the rent?", answer: "Yes! Three home-cooked Gujarati meals (breakfast, lunch, and dinner) are included in the monthly rent." },
   { question: "What are the payment options?", answer: "We accept UPI, bank transfer, and cash payments. Rent is due on the 1st of every month." },
-  { question: "Is there a security deposit?", answer: "Yes, a refundable security deposit of 2 months' rent is required at the time of move-in." },
+  { question: "Is there a security deposit?", answer: "Yes, a refundable security deposit of 1 month's rent is required at the time of move-in." },
   { question: "Are visitors allowed?", answer: "Visitors are allowed in common areas during daytime hours only. Overnight guests are not permitted." },
   { question: "What is the gate closing time?", answer: "The gate closes at 11:00 PM. Late entry can be arranged by informing the management in advance." },
-  { question: "Is parking available?", answer: "Yes, parking space is available for two-wheelers and four-wheelers at select PG locations." },
+  { question: "Is parking available?", answer: "Yes, street parking space is available for two-wheelers at select PG locations." },
   { question: "Can I choose my roommate?", answer: "Yes, if you're joining with a friend, we can arrange for you to share a room together, subject to availability." },
 ];
 
@@ -182,10 +182,10 @@ export interface RoomType {
 }
 
 export const ROOM_TYPES: RoomType[] = [
-  { type: "Standard Room", sharing: "2 Sharing", acType: "AC", price: 13500 },
-  { type: "Standard Room", sharing: "3 Sharing", acType: "AC", price: 11000 },
-  { type: "Standard Room", sharing: "3 Sharing", acType: "Non-AC", price: 10000 },
-  { type: "Drawing Room", sharing: "—", acType: "Non-AC", price: 8500 },
+  { type: "Premium Twin Room", sharing: "2 Sharing", acType: "AC", price: 13500 },
+  { type: "Comfort Triple Room", sharing: "3 Sharing", acType: "AC", price: 11000 },
+  { type: "Standard Triple Room", sharing: "3 Sharing", acType: "Non-AC", price: 10000 },
+  { type: "Drawing Room", sharing: "6 Sharing", acType: "Non-AC", price: 8500 },
 ];
 
 export const FACILITIES = [
@@ -223,7 +223,7 @@ export const HIGHLIGHTS = [
   { icon: "Snowflake", title: "AC / Non-AC", description: "Choose rooms that fit your comfort" },
   { icon: "UtensilsCrossed", title: "Food Included", description: "3 home-cooked meals daily" },
   { icon: "Wifi", title: "High Speed WiFi", description: "Stay connected 24/7" },
-  { icon: "MapPin", title: "Prime Location", description: "Satellite, Ahmedabad" },
+  { icon: "MapPin", title: "Prime Location", description: "Satellite & Ramdev Nagar, Ahmedabad" },
   { icon: "Shield", title: "24/7 Security", description: "CCTV surveillance & secure premises" },
 ];
 

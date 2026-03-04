@@ -14,7 +14,7 @@
 ### Contacts
 - **Sudhir Brahmbhatt**: 96019 33046
 - **Gayatri Brahmbhatt**: 97377 29780
-- **Email**: gayatrisbarot111@gmail.com
+- **Email**: pritgasupg@gmail.com
 
 ### Pricing
 | Room Type | Sharing | AC/Non-AC | Price |
@@ -28,9 +28,9 @@
 1. 23, Jodhpur Kunj Society (5 BHK Bunglow)
 2. 11, Jodhpur Kunj Society
 3. 29, Jodhpur Kunj Society
-4. B 34, Third Floor, Arunprakash Society
-5. B 33, Third Floor, Arunprakash Society
-6. A 1, Ground Floor, Arunprakash Society
+4. B 34, Third Floor, Arun Prakash Society
+5. B 33, Third Floor, Arun Prakash Society
+6. A 1, Ground Floor, Arun Prakash Society
 7. C 43, Sarthi Avenue
 8. 10, Vasupujya Row House
 
@@ -52,7 +52,7 @@ Bed & Wardrobe, Fridge, RO Water, WiFi, Gas, Geyser, Housekeeping, Dining Table,
 - **Footer**: Logo, quick links, contact info for both managers, address, email, copyright
 
 ### 2. Home Page
-- **Hero Section**: Large banner with title "Premium PG Accommodation in Satellite, Ahmedabad", subtitle, and 3 CTA buttons (View PGs, WhatsApp, Call)
+- **Hero Section**: Large banner with title "Affordable PG Accommodation in Satellite, Ahmedabad", subtitle, and 3 CTA buttons (View PGs, WhatsApp, Call)
 - **Highlights Section**: 6 icon cards (Furnished Rooms, AC/Non-AC, Food Included, High Speed WiFi, Prime Location, 24/7 Security)
 - **Our PGs Preview**: Grid of 8 PG property cards with real addresses and names
 - **Meal Plan Section**: Showcase the breakfast/lunch/dinner menu with the real menu items
@@ -88,7 +88,7 @@ Bed & Wardrobe, Fridge, RO Water, WiFi, Gas, Geyser, Housekeeping, Dining Table,
 ### 7. Contact Page
 - Both contact numbers prominently displayed
 - WhatsApp buttons for both managers
-- Email: gayatrisbarot111@gmail.com
+- Email: pritgasupg@gmail.com
 - Address (Satellite, Ahmedabad area)
 - Google Map embed
 - Inquiry form (Name, Phone, Message)

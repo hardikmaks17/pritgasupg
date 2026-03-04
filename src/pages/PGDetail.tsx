@@ -233,7 +233,7 @@ const PGDetail = () => {
                         <SelectContent>
                           {ROOM_TYPES.map((r, i) => (
                             <SelectItem key={i} value={`${r.sharing}-${r.acType}`}>
-                              {r.type} · {r.sharing} · {r.acType} — ₹{r.price.toLocaleString()}/mo
+                              {r.sharing} · {r.acType} - ₹{r.price.toLocaleString()}/mo
                             </SelectItem>
                           ))}
                         </SelectContent>

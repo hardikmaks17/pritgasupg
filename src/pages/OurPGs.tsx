@@ -21,7 +21,7 @@ const OurPGs = () => {
       <section className="bg-secondary text-secondary-foreground py-12">
         <div className="container">
           <h1 className="text-3xl md:text-4xl font-heading font-extrabold">Our PG Properties</h1>
-          <p className="mt-2 opacity-90">8 well-maintained PG locations in Satellite, Ahmedabad</p>
+          <p className="mt-2 opacity-90">8 well-maintained PG locations in Satellite and Ramdev Nagar, Ahmedabad</p>
         </div>
       </section>
       <section className="py-12 bg-muted">
@@ -39,7 +39,7 @@ const OurPGs = () => {
                 <CardContent className="pt-4 space-y-2">
                   <h3 className="font-heading font-semibold">{pg.name}</h3>
                   <p className="text-sm text-muted-foreground">{pg.description}</p>
-                  <p className="text-xs text-muted-foreground flex items-center gap-1"><MapPin className="h-3 w-3" /> {pg.address}</p>
+                  <p className="text-xs text-muted-foreground flex items-center gap-1"><MapPin className="h-3 w-3 shrink-0 hidden" /> {pg.address}</p>
                   <div className="flex items-center justify-between pt-2">
                     <span className="font-bold text-secondary">From ₹{pg.startingPrice.toLocaleString()}<span className="text-xs font-normal text-muted-foreground">/mo</span></span>
                     <Button size="sm" asChild><Link to={`/pg/${pg.id}`}>View Details</Link></Button>
