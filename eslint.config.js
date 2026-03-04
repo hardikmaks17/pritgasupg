@@ -23,4 +23,15 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  // Relax rules for auto-generated shadcn/ui files — these use patterns
+  // (empty interface extensions, mixed component/util exports) that are
+  // idiomatic for shadcn and cannot be changed without ejecting from the tool.
+  {
+    files: ["src/components/ui/**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-empty-object-type": "off",
+      "react-refresh/only-export-components": "off",
+    },
+  },
 );
+
