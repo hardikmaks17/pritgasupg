@@ -10,12 +10,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   BRAND, PG_PROPERTIES, ROOM_TYPES, FACILITIES, MEAL_PLAN,
-  HIGHLIGHTS, whatsappLink,
+  HIGHLIGHTS, whatsappLink, pgLink,
 } from "@/data/pgData";
 import AvailabilityBadge from "@/components/AvailabilityBadge";
 import ReadyToMoveIn from "@/components/ReadyToMoveIn";
 import TestimonialSlider from "@/components/TestimonialSlider";
-import ImageLightbox, { useImageLightbox } from "@/components/ImageLightbox";
 
 const iconMap: Record<string, React.ReactNode> = {
   Home: <Home className="h-6 w-6" />,
@@ -53,8 +52,6 @@ const SectionTitle = ({ badge, title, subtitle }: { badge?: string; title: strin
 );
 
 const Index = () => {
-  const { lightbox, openLightbox, closeLightbox } = useImageLightbox();
-
   return (
     <>
       {/* Hero */}
@@ -104,19 +101,21 @@ const Index = () => {
             {PG_PROPERTIES.map((pg, i) => (
               <motion.div key={pg.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="h-full">
                 <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow group">
-                  <div
-                    className="aspect-video bg-accent overflow-hidden relative cursor-pointer shrink-0"
-                    onClick={() => openLightbox(pg.images.map((src, j) => ({ src, alt: `${pg.name} - ${j + 1}` })), 0)}
+                  <Link
+                    to={pgLink(pg.id)}
+                    className="aspect-video bg-accent overflow-hidden relative block shrink-0"
                   >
                     <img src={pg.image} alt={pg.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     <AvailabilityBadge status={pg.availability} className="absolute top-2 right-2" />
-                  </div>
+                  </Link>
                   <CardContent className="pt-4 flex flex-col flex-grow">
-                    <h3 className="font-heading font-semibold text-sm leading-tight mb-2">{pg.name}</h3>
+                    <Link to={pgLink(pg.id)} className="hover:text-secondary transition-colors">
+                      <h3 className="font-heading font-semibold text-sm leading-tight mb-2">{pg.name}</h3>
+                    </Link>
                     <p className="text-xs text-muted-foreground flex items-center gap-1 mb-3"><MapPin className="h-3 w-3 shrink-0 hidden" /> {pg.address}</p>
                     <div className="flex items-center justify-between pt-1 mt-auto">
                       <span className="text-sm font-bold text-secondary">₹{pg.startingPrice.toLocaleString()}<span className="text-xs font-normal text-muted-foreground">/mo</span></span>
-                      <Button size="sm" variant="outline" asChild className="text-xs h-7"><Link to={`/pg/${pg.id}`}>Details</Link></Button>
+                      <Button size="sm" variant="outline" asChild className="text-xs h-7"><Link to={pgLink(pg.id)}>Details</Link></Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -129,7 +128,7 @@ const Index = () => {
       {/* Meal Plan */}
       <section className="py-16 bg-background">
         <div className="container">
-          <SectionTitle badge="Food" title="Home-Cooked Meal Plan" subtitle="Delicious Gujarati meals served 3 times a day" />
+          <SectionTitle badge="Food" title="Home-Cooked Meal Plan" subtitle="Delicious meals served 3 times a day" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {(["breakfast", "lunch", "dinner"] as const).map((meal, i) => (
               <motion.div key={meal} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
@@ -235,13 +234,6 @@ const Index = () => {
 
       {/* CTA */}
       <ReadyToMoveIn />
-
-      <ImageLightbox
-        images={lightbox.images}
-        initialIndex={lightbox.index}
-        open={lightbox.open}
-        onOpenChange={closeLightbox}
-      />
     </>
   );
 };

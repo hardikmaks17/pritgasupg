@@ -25,7 +25,9 @@ export const whatsappLink = (msg = "Hi, I came across the Pritgasu PG Services w
   `https://wa.me/91${CONTACTS.gayatri.phone}?text=${encodeURIComponent(msg)}`;
 
 export const callLink = (who: "sudhir" | "gayatri" = "gayatri") =>
-  `tel:+91${CONTACTS[who].phone}`;
+  `tel:${CONTACTS[who].phone}`;
+
+export const pgLink = (id: string) => `/pg/${id}`;
 
 export const mainReviewLink = () => 
   "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6";
@@ -175,7 +177,7 @@ export const PG_PROPERTIES: PGProperty[] = [
 
 export const FAQ_ITEMS: FAQItem[] = [
   { question: "What is the minimum stay duration?", answer: "The minimum stay duration is 1 month. We offer flexible lease terms for students and working professionals." },
-  { question: "Is food included in the rent?", answer: "Yes! Three home-cooked Gujarati meals (breakfast, lunch, and dinner) are included in the monthly rent." },
+  { question: "Is food included in the rent?", answer: "Yes! Three home-cooked meals (breakfast, lunch, and dinner) are included in the monthly rent." },
   { question: "What are the payment options?", answer: "We accept UPI, bank transfer, and cash payments. Rent is due on the 1st of every month." },
   { question: "Is there a security deposit?", answer: "Yes, a refundable security deposit of 1 month's rent is required at the time of move-in." },
   { question: "Are visitors allowed?", answer: "Visitors are allowed in common areas during daytime hours only. Overnight guests are not permitted." },

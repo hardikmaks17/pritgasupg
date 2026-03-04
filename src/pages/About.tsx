@@ -63,7 +63,7 @@ const About = () => (
             <p className="text-muted-foreground leading-relaxed">
               With 8 strategically located properties in the Satellite and Ramdevnagar area, we offer a variety of room options
               to suit every budget — from AC and Non-AC premium rooms to drawing rooms. All our PGs come equipped
-              with essential amenities including WiFi, housekeeping, laundry, and three home-cooked Gujarati meals daily.
+              with essential amenities including WiFi, housekeeping, laundry, and three home-cooked meals daily.
             </p>
           </motion.div>
 
