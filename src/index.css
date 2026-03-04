@@ -86,3 +86,64 @@
 html {
   scroll-behavior: smooth;
 }
+
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 2.5rem;
+}
+
+/* Date Input Styles (Moved from component to avoid inline styles) */
+.date-input-ios-fix {
+  font-family: inherit;
+  font-size: 0.875rem; /* text-base for mobile */
+}
+
+.date-input-ios-fix::-webkit-date-and-time-value {
+  text-align: left;
+  min-height: 1.25rem;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.date-input-ios-fix::-webkit-datetime-edit {
+  display: inline-flex;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.date-input-ios-fix::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@media (pointer: coarse) {
+  .date-input-ios-fix::before {
+    content: attr(placeholder);
+    color: hsl(var(--muted-foreground));
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+  }
+  .date-input-ios-fix:focus::before,
+  .date-input-ios-fix:valid::before {
+    display: none !important;
+  }
+}
+

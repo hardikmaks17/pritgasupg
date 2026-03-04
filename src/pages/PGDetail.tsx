@@ -3,6 +3,7 @@ import { useState } from "react";
 import { MapPin, Phone, ChevronLeft, CheckCircle, GraduationCap, Building2, HeartPulse, Bus, ShoppingBag } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import { DateInput } from "@/components/ui/date";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -222,7 +223,12 @@ const PGDetail = () => {
                     </div>
                     <div>
                       <Label htmlFor="movein">Move-in Date</Label>
-                      <Input id="movein" name="movein" type="date" className="block" required />
+                      <DateInput 
+                        id="movein" 
+                        name="movein" 
+                        placeholder="Select move-in date"
+                        required 
+                      />
                     </div>
                     <div>
                       <Label htmlFor="preferred-pg">Preferred PG</Label>
