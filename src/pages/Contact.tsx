@@ -1,20 +1,30 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, MessageCircle, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { BRAND, CONTACTS } from "@/data/pgData";
+import { BRAND, CONTACTS, whatsappLink } from "@/data/pgData";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const userMessage = formData.get("message") as string;
+
+    const message = `Hi, I'm ${name}. I have an enquiry regarding Pritgasu PG. You can reach me at ${phone}. My enquiry is about: ${userMessage}`;
+
+    window.open(whatsappLink(message), "_blank");
+    
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
@@ -47,10 +57,10 @@ const Contact = () => {
                         <div className="flex gap-2">
                           <Button size="sm" asChild className="bg-green-600 hover:bg-green-700 text-white">
                             <a href={`https://wa.me/91${c.phone}`} target="_blank" rel="noopener noreferrer">
-                              <MessageCircle className="h-4 w-4" />
+                              <SiWhatsapp className="h-4 w-4" />
                             </a>
                           </Button>
-                          <Button size="sm" variant="outline" asChild>
+                          <Button size="sm" asChild>
                             <a href={`tel:+91${c.phone}`}><Phone className="h-4 w-4" /></a>
                           </Button>
                         </div>
@@ -104,15 +114,15 @@ const Contact = () => {
                         <form onSubmit={handleSubmit} className="space-y-4">
                           <div>
                             <Label htmlFor="name">Name</Label>
-                            <Input id="name" placeholder="Your name" required />
+                            <Input id="name" name="name" placeholder="Your name" required />
                           </div>
                           <div>
                             <Label htmlFor="phone">Phone</Label>
-                            <Input id="phone" type="tel" placeholder="Your phone number" required />
+                            <Input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
                           </div>
                           <div>
                             <Label htmlFor="message">Message</Label>
-                            <Textarea id="message" placeholder="How can we help you?" rows={4} required />
+                            <Textarea id="message" name="message" placeholder="How can we help you?" rows={4} required />
                           </div>
                           <Button type="submit" className="w-full">Send Message</Button>
                         </form>

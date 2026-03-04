@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { CONTACTS, whatsappLink, callLink } from "@/data/pgData";
 
@@ -28,36 +29,38 @@ const ReadyToMoveIn = () => (
           Contact us today for the best PG accommodation in Satellite, Ahmedabad
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-3">
+        <div className="flex flex-col justify-center gap-3">
+          <div className="flex flex-col md:flex-row justify-center flex-wrap gap-3">
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="grow border-2 border-secondary-foreground/30 text-secondary-foreground bg-transparent hover:bg-secondary-foreground/10 font-semibold"
+            >
+              <a href={callLink()}>
+                <Phone className="h-5 w-5" /> {CONTACTS.sudhir.name} - {CONTACTS.sudhir.label}
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="grow border-2 border-secondary-foreground/30 text-secondary-foreground bg-transparent hover:bg-secondary-foreground/10 font-semibold"
+            >
+              <a href={callLink("gayatri")}>
+                <Phone className="h-5 w-5" /> {CONTACTS.gayatri.name} - {CONTACTS.gayatri.label}
+              </a>
+            </Button>
+           </div>
           <Button
             size="lg"
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg"
           >
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-5 w-5" />
+              <SiWhatsapp className="h-5 w-5" />
               WhatsApp Us
               <ArrowRight className="h-4 w-4" />
-            </a>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            asChild
-            className="border-2 border-secondary-foreground/30 text-secondary-foreground bg-transparent hover:bg-secondary-foreground/10 font-semibold"
-          >
-            <a href={callLink()}>
-              <Phone className="h-5 w-5" /> {CONTACTS.sudhir.label}
-            </a>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            asChild
-            className="border-2 border-secondary-foreground/30 text-secondary-foreground bg-transparent hover:bg-secondary-foreground/10 font-semibold"
-          >
-            <a href={callLink("gayatri")}>
-              <Phone className="h-5 w-5" /> {CONTACTS.gayatri.label}
             </a>
           </Button>
         </div>

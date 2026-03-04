@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { MapPin, Phone, MessageCircle, ChevronLeft, CheckCircle, GraduationCap, Building2, HeartPulse, Bus, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, ChevronLeft, CheckCircle, GraduationCap, Building2, HeartPulse, Bus, ShoppingBag } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -41,10 +42,22 @@ const PGDetail = () => {
     );
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const moveInDate = formData.get("movein") as string;
+    
+    const pgName = PG_PROPERTIES.find(p => p.id === selectedPg)?.name || "";
+    const roomInfo = selectedRoom || "room not specified";
+
+    const message = `Hi, I'm interested in staying at ${pgName}. I would like to know about the availability for ${roomInfo}. My expected move-in date is ${moveInDate}. Please let me know the details and next steps. Thank you.`;
+
+    window.open(whatsappLink(message), "_blank");
+    
     setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 3000);
+    setTimeout(() => setFormSubmitted(false), 5000);
   };
 
   const galleryImages = pg.images.map((src, i) => ({ src, alt: `${pg.name} - Photo ${i + 1}` }));
@@ -61,7 +74,7 @@ const PGDetail = () => {
             <h1 className="text-2xl md:text-3xl font-heading font-extrabold">{pg.name}</h1>
             <AvailabilityBadge status={pg.availability} />
           </div>
-          <p className="flex items-center gap-1 mt-1 opacity-90 text-sm"><MapPin className="h-4 w-4" /> {pg.address}</p>
+          <p className="flex items-center gap-1 mt-3 opacity-90 text-sm"><MapPin className="h-4 w-4 shrink-0 hidden" /> {pg.address}</p>
         </div>
       </section>
 
@@ -201,32 +214,32 @@ const PGDetail = () => {
                   <form onSubmit={handleSubmit} className="space-y-3">
                     <div>
                       <Label htmlFor="name">Name</Label>
-                      <Input id="name" placeholder="Your name" required />
+                      <Input id="name" name="name" placeholder="Your name" required />
                     </div>
                     <div>
                       <Label htmlFor="phone">Phone</Label>
-                      <Input id="phone" type="tel" placeholder="Your phone number" required />
+                      <Input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
                     </div>
                     <div>
                       <Label htmlFor="movein">Move-in Date</Label>
-                      <Input id="movein" type="date" required />
+                      <Input id="movein" name="movein" type="date" className="block" required />
                     </div>
                     <div>
                       <Label htmlFor="preferred-pg">Preferred PG</Label>
-                      <Select value={selectedPg} onValueChange={setSelectedPg}>
+                      <Select name="preferred-pg" value={selectedPg} onValueChange={setSelectedPg} required>
                         <SelectTrigger>
                           <SelectValue placeholder="Select a PG" />
                         </SelectTrigger>
                         <SelectContent>
                           {PG_PROPERTIES.map((p) => (
-                            <SelectItem key={p.id} value={p.id}>{p.shortName} — {p.name.split("—")[1]?.trim()}</SelectItem>
+                            <SelectItem key={p.id} value={p.id}>{p.name.split("—")[1]?.trim()}</SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
                     </div>
                     <div>
                       <Label htmlFor="room-type">Interested Room Type</Label>
-                      <Select value={selectedRoom} onValueChange={setSelectedRoom}>
+                      <Select  name="room-type" value={selectedRoom} onValueChange={setSelectedRoom} required>
                         <SelectTrigger>
                           <SelectValue placeholder="Select room type" />
                         </SelectTrigger>
@@ -244,11 +257,11 @@ const PGDetail = () => {
                 )}
 
                 <div className="space-y-2 pt-2">
-                  <Button asChild className="w-full bg-green-600 hover:bg-green-700 text-white">
+                  {/* <Button asChild className="w-full bg-green-600 hover:bg-green-700 text-white">
                     <a href={whatsappLink(`Hi, I'm interested in ${pg.name}.`)} target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="h-4 w-4" /> WhatsApp
+                      <SiWhatsapp className="h-4 w-4" /> WhatsApp
                     </a>
-                  </Button>
+                  </Button> */}
                   <Button variant="outline" asChild className="w-full">
                     <a href={callLink()}>
                       <Phone className="h-4 w-4" /> {CONTACTS.sudhir.name} — {CONTACTS.sudhir.label}

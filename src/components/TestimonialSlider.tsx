@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { TESTIMONIALS } from "@/data/pgData";
+import { Star, ChevronLeft, ChevronRight, Quote, ArrowRight } from "lucide-react";
+import { TESTIMONIALS, mainReviewLink } from "@/data/pgData";
+import { Button } from "@/components/ui/button";
 
 const TestimonialSlider = () => {
   const [current, setCurrent] = useState(0);
@@ -31,7 +32,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <section className="py-16 bg-muted">
+    <section className="py-16 bg-muted overflow-hidden">
       <div className="container">
         <div className="text-center mb-10">
           <span className="inline-block bg-accent text-secondary text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
@@ -56,7 +57,7 @@ const TestimonialSlider = () => {
           </button>
 
           {/* Card */}
-          <div className="overflow-hidden px-4">
+          <div className="px-4">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}
@@ -107,6 +108,12 @@ const TestimonialSlider = () => {
                 }`}
               />
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button color="primary" asChild>
+              <a href={mainReviewLink()} target="_blank" rel="noopener noreferrer">Read all our reviews<ArrowRight className="ml-1 h-4 w-4" /></a>
+            </Button>
           </div>
         </div>
       </div>

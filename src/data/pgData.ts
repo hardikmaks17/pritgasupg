@@ -22,10 +22,20 @@ export const CONTACTS = {
 };
 
 export const whatsappLink = (msg = "Hi, I'm interested in Pritgasu PG Services.") =>
-  `https://wa.me/91${CONTACTS.sudhir.phone}?text=${encodeURIComponent(msg)}`;
+  `https://wa.me/91${CONTACTS.gayatri.phone}?text=${encodeURIComponent(msg)}`;
 
-export const callLink = (who: "sudhir" | "gayatri" = "sudhir") =>
+export const callLink = (who: "sudhir" | "gayatri" = "gayatri") =>
   `tel:+91${CONTACTS[who].phone}`;
+
+export const mainReviewLink = () => 
+  "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6";
+
+export const SOCIAL_LINKS = {
+  instagram: "#",
+  facebook: "#",
+  whatsapp: whatsappLink(),
+  maps: mainReviewLink(),
+};
 
 export type AvailabilityStatus = "Available" | "Limited Availability" | "Fully Occupied";
 
@@ -67,7 +77,7 @@ const pgImages = [pgRoom1, pgRoom2, pgRoom3, pgBuilding1, pgDining, pgFacility];
 export const PG_PROPERTIES: PGProperty[] = [
   {
     id: "jodhpur-kunj-11",
-    name: "Pritgasu PG — Jodhpur Kunj #11",
+    name: "Pritgasu PG — Jodhpur Kunj 11",
     shortName: "JK-11",
     address: "11, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Well-maintained PG with homely atmosphere",
@@ -79,7 +89,7 @@ export const PG_PROPERTIES: PGProperty[] = [
   },
   {
     id: "jodhpur-kunj-23",
-    name: "Pritgasu PG — Jodhpur Kunj #23",
+    name: "Pritgasu PG — Jodhpur Kunj 23",
     shortName: "JK-23",
     address: "23, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Spacious 5 BHK Bunglow with premium amenities",
@@ -91,7 +101,7 @@ export const PG_PROPERTIES: PGProperty[] = [
   },
   {
     id: "jodhpur-kunj-29",
-    name: "Pritgasu PG — Jodhpur Kunj #29",
+    name: "Pritgasu PG — Jodhpur Kunj 29",
     shortName: "JK-29",
     address: "29, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Comfortable PG in prime Jodhpur Kunj location",
@@ -151,7 +161,7 @@ export const PG_PROPERTIES: PGProperty[] = [
   },
   {
     id: "vasupujya-10",
-    name: "Pritgasu PG — Vasupujya Row House #10",
+    name: "Pritgasu PG — Vasupujya Row House 10",
     shortName: "VP-10",
     address: "10, Vasupujya Row House, Opp Punchgini Apartment, Opp Satyagraha Chhavni Road, Nr Le Meridien Hotel, Satellite, Ahmedabad, 380015.",
     description: "Row house PG with spacious common areas",
@@ -259,7 +269,6 @@ export const HOUSE_RULES = [
   "Visitors allowed only in common areas during daytime",
   "Maintain silence after 10:00 PM",
   "Keep rooms and common areas clean",
-  "Gate closing time: 11:00 PM",
   "Inform management before leaving for extended periods",
   "Electricity and water to be used responsibly",
 ];

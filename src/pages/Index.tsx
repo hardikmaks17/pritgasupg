@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  Home, Snowflake, UtensilsCrossed, Wifi, MapPin, Shield, Phone, MessageCircle,
+  Home, Snowflake, UtensilsCrossed, Wifi, MapPin, Shield, Phone,
   Bed, Tv, Droplets, Flame, Car, ChevronRight,
 } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -67,7 +68,7 @@ const Index = () => {
             <div className="flex flex-wrap gap-3">
               <Button size="lg" asChild><Link to="/our-pgs"><ChevronRight className="h-4 w-4" /> View Our PGs</Link></Button>
               <Button size="lg" asChild className="bg-green-600 hover:bg-green-700 text-white">
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"><MessageCircle className="h-4 w-4" /> WhatsApp Now</a>
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"><SiWhatsapp className="h-4 w-4" /> WhatsApp Now</a>
               </Button>
             </div>
           </motion.div>
@@ -100,19 +101,19 @@ const Index = () => {
           <SectionTitle badge="Properties" title="Our PG Locations" subtitle="8 well-maintained properties across Satellite and Ramdev Nagar, Ahmedabad" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {PG_PROPERTIES.map((pg, i) => (
-              <motion.div key={pg.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
+              <motion.div key={pg.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="h-full">
+                <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow group">
                   <div
-                    className="aspect-video bg-accent overflow-hidden relative cursor-pointer"
+                    className="aspect-video bg-accent overflow-hidden relative cursor-pointer shrink-0"
                     onClick={() => openLightbox(pg.images.map((src, j) => ({ src, alt: `${pg.name} - ${j + 1}` })), 0)}
                   >
                     <img src={pg.image} alt={pg.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     <AvailabilityBadge status={pg.availability} className="absolute top-2 right-2" />
                   </div>
-                  <CardContent className="pt-4 space-y-2">
-                    <h3 className="font-heading font-semibold text-sm leading-tight">{pg.name}</h3>
-                    <p className="text-xs text-muted-foreground flex items-center gap-1"><MapPin className="h-3 w-3 shrink-0 hidden" /> {pg.address}</p>
-                    <div className="flex items-center justify-between pt-1">
+                  <CardContent className="pt-4 flex flex-col flex-grow">
+                    <h3 className="font-heading font-semibold text-sm leading-tight mb-2">{pg.name}</h3>
+                    <p className="text-xs text-muted-foreground flex items-center gap-1 mb-3"><MapPin className="h-3 w-3 shrink-0 hidden" /> {pg.address}</p>
+                    <div className="flex items-center justify-between pt-1 mt-auto">
                       <span className="text-sm font-bold text-secondary">₹{pg.startingPrice.toLocaleString()}<span className="text-xs font-normal text-muted-foreground">/mo</span></span>
                       <Button size="sm" variant="outline" asChild className="text-xs h-7"><Link to={`/pg/${pg.id}`}>Details</Link></Button>
                     </div>
@@ -149,6 +150,13 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mt-12 flex justify-center max-w-3xl mx-auto">
+            <div className="bg-muted rounded-md px-5 py-3 flex items-center gap-4 text-sm text-muted-foreground border border-border/40 shadow-sm max-w-fit">
+              <UtensilsCrossed className="h-4 w-4 text-secondary shrink-0" />
+              <span>All meals are freshly prepared in a hygienic kitchen. The menu may be updated occasionally based on seasonal ingredients and feedback from our residents to maintain variety.</span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -172,17 +180,32 @@ const Index = () => {
       <section className="py-16 bg-background">
         <div className="container">
           <SectionTitle badge="Pricing" title="Room Types & Pricing" subtitle="Transparent pricing, no hidden charges" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {ROOM_TYPES.map((r, i) => (
-              <motion.div key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <Card className={`h-full text-center hover:shadow-lg transition-shadow ${i === 0 ? "border-2 border-secondary" : ""}`}>
-                  <CardContent className="pt-6 space-y-3">
-                    {i === 0 && <span className="inline-block bg-secondary text-secondary-foreground text-xs font-bold px-2 py-0.5 rounded-full">Most Popular</span>}
-                    <h3 className="font-heading font-semibold">{r.type}</h3>
-                    <p className="text-sm text-muted-foreground">{r.sharing} · {r.acType}</p>
-                    <div className="text-3xl font-heading font-extrabold text-secondary">₹{r.price.toLocaleString()}<span className="text-sm font-normal text-muted-foreground">/month</span></div>
-                    <Button size="sm" asChild className="w-full">
-                      <a href={whatsappLink(`Hi, I'm interested in ${r.sharing} ${r.acType} room at ₹${r.price}/month.`)} target="_blank" rel="noopener noreferrer">Enquire Now</a>
+              <motion.div key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="h-full">
+                <Card className={`h-full flex flex-col text-center hover:shadow-lg transition-shadow bg-background ${i === 1 ? "border-2 border-secondary shadow-md" : "border border-border/60 shadow-sm"}`}>
+                  <CardContent className="p-6 flex flex-col flex-grow">
+                    <div className="min-h-[28px] mb-2 flex items-center justify-center">
+                      {i === 1 && (
+                        <span className="inline-flex bg-secondary text-secondary-foreground text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                          Most Popular
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold">{r.type}</h3>
+                    <p className="text-sm text-muted-foreground mt-2">{r.sharing} · {r.acType}</p>
+                    
+                    <div className="mt-auto pt-8 pb-6">
+                      <div className="text-3xl font-heading font-extrabold text-secondary">
+                        ₹{r.price.toLocaleString()}
+                        <span className="text-sm font-normal text-muted-foreground">/month</span>
+                      </div>
+                    </div>
+                    
+                    <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium h-10">
+                      <a href={whatsappLink(`Hi, I'm interested in the ${r.type} (${r.sharing}, ${r.acType}) at ₹${r.price}/month.`)} target="_blank" rel="noopener noreferrer">
+                        Enquire Now
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
