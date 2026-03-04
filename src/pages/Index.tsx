@@ -1,223 +1,25 @@
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import {
-  Home, Snowflake, UtensilsCrossed, Wifi, MapPin, Shield,
-  Bed, Tv, Droplets, Flame, Car, ChevronRight,
-  Info,
-} from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  BRAND, PG_PROPERTIES, ROOM_TYPES, FACILITIES, MEAL_PLAN,
-  HIGHLIGHTS, whatsappLink,
-} from "@/data/pgData";
-import PGCard from "@/components/PGCard";
-import ReadyToMoveIn from "@/components/ReadyToMoveIn";
-import TestimonialSlider from "@/components/TestimonialSlider";
+import HeroSection from "@/components/sections/home/HeroSection";
+import HighlightsSection from "@/components/sections/home/HighlightsSection";
+import OurPGsPreviewSection from "@/components/sections/home/OurPGsPreviewSection";
+import MealPlanSection from "@/components/sections/home/MealPlanSection";
+import FacilitiesSection from "@/components/sections/home/FacilitiesSection";
+import PricingSection from "@/components/sections/home/PricingSection";
+import LocationMapSection from "@/components/sections/home/LocationMapSection";
+import TestimonialsSection from "@/components/sections/home/TestimonialsSection";
+import ReadyToMoveIn from "@/components/shared/ReadyToMoveIn";
 
-const iconMap: Record<string, React.ReactNode> = {
-  Home: <Home className="h-6 w-6" />,
-  Snowflake: <Snowflake className="h-6 w-6" />,
-  UtensilsCrossed: <UtensilsCrossed className="h-6 w-6" />,
-  Wifi: <Wifi className="h-6 w-6" />,
-  MapPin: <MapPin className="h-6 w-6" />,
-  Shield: <Shield className="h-6 w-6" />,
-  Bed: <Bed className="h-5 w-5" />,
-  Tv: <Tv className="h-5 w-5" />,
-  Refrigerator: <Snowflake className="h-5 w-5" />,
-  Droplets: <Droplets className="h-5 w-5" />,
-  Flame: <Flame className="h-5 w-5" />,
-  SprayCanIcon: <Droplets className="h-5 w-5" />,
-  CookingPot: <UtensilsCrossed className="h-5 w-5" />,
-  Car: <Car className="h-5 w-5" />,
-  WashingMachine: <Droplets className="h-5 w-5" />,
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5 } }),
-};
-
-const SectionTitle = ({ badge, title, subtitle }: { badge?: string; title: string; subtitle?: string }) => (
-  <div className="text-center mb-10">
-    {badge && (
-      <span className="inline-block bg-accent text-secondary text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
-        {badge}
-      </span>
-    )}
-    <h2 className="text-2xl md:text-3xl font-heading font-bold text-secondary">{title}</h2>
-    {subtitle && <p className="mt-2 text-muted-foreground max-w-xl mx-auto">{subtitle}</p>}
-  </div>
+const Index = () => (
+  <>
+    <HeroSection />
+    <HighlightsSection />
+    <OurPGsPreviewSection />
+    <MealPlanSection />
+    <FacilitiesSection />
+    <PricingSection />
+    <TestimonialsSection />
+    <LocationMapSection />
+    <ReadyToMoveIn />
+  </>
 );
-
-const Index = () => {
-  return (
-    <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-accent via-background to-muted">
-        <div className="container py-16 md:py-24">
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-2xl">
-            <span className="inline-block bg-primary/20 text-secondary text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-              Satellite, Ahmedabad
-            </span>
-            <h1 className="text-3xl md:text-5xl font-heading font-extrabold leading-tight text-foreground mb-4">{BRAND.tagline}</h1>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">{BRAND.subtitle}</p>
-            <div className="flex flex-wrap gap-3">
-              <Button size="lg" asChild><Link to="/our-pgs"><ChevronRight className="h-4 w-4" /> View Our PGs</Link></Button>
-              <Button size="lg" asChild className="bg-green-600 hover:bg-green-700 text-white">
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"><SiWhatsapp className="h-4 w-4" /> WhatsApp Now</a>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="py-16 bg-background">
-        <div className="container">
-          <SectionTitle badge="Why Choose Us" title="Why Pritgasu PG?" subtitle="Everything you need for comfortable living" />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {HIGHLIGHTS.map((h, i) => (
-              <motion.div key={h.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <Card className="h-full text-center hover:shadow-md transition-shadow">
-                  <CardContent className="pt-6 flex flex-col items-center gap-3">
-                    <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-secondary">{iconMap[h.icon]}</div>
-                    <h3 className="font-heading font-semibold text-sm md:text-base">{h.title}</h3>
-                    <p className="text-xs text-muted-foreground">{h.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our PGs Preview */}
-      <section className="py-16 bg-muted">
-        <div className="container">
-          <SectionTitle badge="Properties" title="Our PG Locations" subtitle="8 well-maintained properties across Satellite and Ramdev Nagar, Ahmedabad" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {PG_PROPERTIES.map((pg, i) => (
-              <motion.div key={pg.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="h-full">
-                <PGCard pg={pg} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meal Plan */}
-      <section className="py-16 bg-background">
-        <div className="container">
-          <SectionTitle badge="Food" title="Home-Cooked Meal Plan" subtitle="Delicious meals served 3 times a day" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {(["breakfast", "lunch", "dinner"] as const).map((meal, i) => (
-              <motion.div key={meal} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <Card className="h-full">
-                  <CardContent className="pt-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-secondary"><UtensilsCrossed className="h-4 w-4" /></div>
-                      <h3 className="font-heading font-semibold capitalize">{meal}</h3>
-                    </div>
-                    <ul className="space-y-1.5">
-                      {MEAL_PLAN[meal].map((item) => (
-                        <li key={item} className="text-sm text-muted-foreground flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />{item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mt-6 sm:mt-12 flex justify-center max-w-3xl mx-auto">
-            <div className="bg-muted rounded-md px-5 py-3 flex gap-4 text-sm text-muted-foreground border border-border/40 shadow-sm max-w-fit">
-              <Info className="h-4 w-4 mt-1 text-secondary shrink-0" />
-              <span>All meals are freshly prepared in a hygienic kitchen. The menu may be updated occasionally based on seasonal ingredients and feedback from our residents to maintain variety.</span>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Facilities */}
-      <section className="py-16 bg-muted">
-        <div className="container">
-          <SectionTitle badge="Amenities" title="Facilities & Amenities" subtitle="Everything for a comfortable stay" />
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-            {FACILITIES.map((f, i) => (
-              <motion.div key={f.label} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                className="flex flex-col items-center gap-2 text-center p-3 rounded-lg bg-background shadow-sm">
-                <div className="text-secondary">{iconMap[f.icon] || <Wifi className="h-5 w-5" />}</div>
-                <span className="text-xs font-medium">{f.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="py-16 bg-background">
-        <div className="container">
-          <SectionTitle badge="Pricing" title="Room Types & Pricing" subtitle="Transparent pricing, no hidden charges" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {ROOM_TYPES.map((r, i) => (
-              <motion.div key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="h-full">
-                <Card className={`h-full flex flex-col text-center hover:shadow-lg transition-shadow bg-background ${i === 1 ? "border-2 border-secondary shadow-md" : "border border-border/60 shadow-sm"}`}>
-                  <CardContent className="p-6 flex flex-col flex-grow">
-                    <div className="sm:min-h-[28px] mb-2 flex items-center justify-center">
-                      {i === 1 && (
-                        <span className="inline-flex bg-secondary text-secondary-foreground text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                          Most Popular
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-lg font-heading font-semibold">{r.type}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">{r.sharing} · {r.acType}</p>
-                    
-                    <div className="mt-auto pt-8 pb-6">
-                      <div className="text-3xl font-heading font-extrabold text-secondary">
-                        ₹{r.price.toLocaleString()}
-                        <span className="text-sm font-normal text-muted-foreground">/month</span>
-                      </div>
-                    </div>
-                    
-                    <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium h-10">
-                      <a href={whatsappLink(`Hi, I'm interested in the ${r.type} (${r.sharing}, ${r.acType}) at ₹${r.price}/month.`)} target="_blank" rel="noopener noreferrer">
-                        Enquire Now
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <TestimonialSlider />
-
-      {/* Location Map */}
-      <section className="py-16 bg-background">
-        <div className="container">
-          <SectionTitle badge="Location" title="Find Us in Satellite, Ahmedabad" />
-          <div className="rounded-lg overflow-hidden shadow-md">
-            <iframe
-              title="Pritgasu PG Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14688.682!2d72.4993!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b4922b3b3e1%3A0x4b63b1f3e0c3c8a0!2sSatellite%2C%20Ahmedabad%2C%20Gujarat%20380015!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              width="100%" height="350" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <ReadyToMoveIn />
-    </>
-  );
-};
 
 export default Index;

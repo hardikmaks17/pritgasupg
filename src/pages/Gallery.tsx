@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { GALLERY_IMAGES } from "@/data/pgData";
-import ReadyToMoveIn from "@/components/ReadyToMoveIn";
-import ImageLightbox, { useImageLightbox } from "@/components/ImageLightbox";
+import ReadyToMoveIn from "@/components/shared/ReadyToMoveIn";
+import ImageLightbox from "@/components/ImageLightbox";
+import useImageLightbox from "@/hooks/useImageLightbox";
 
 const CATEGORIES = ["all", "rooms", "building", "facilities", "food"] as const;
 

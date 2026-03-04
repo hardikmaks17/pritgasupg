@@ -51,7 +51,7 @@ const ReadyToMoveIn = () => (
                 <Phone className="h-5 w-5" /> {CONTACTS.gayatri.name} - {CONTACTS.gayatri.label}
               </a>
             </Button>
-           </div>
+          </div>
           <Button
             size="lg"
             asChild

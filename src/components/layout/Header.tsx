@@ -1,18 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
-import { whatsappLink, callLink } from "@/data/pgData";
+import { callLink } from "@/data/pgData";
+import { NAV_LINKS } from "@/data/navLinks";
 import { motion, AnimatePresence } from "framer-motion";
-
-const NAV_LINKS = [
-  { label: "Home", to: "/" },
-  { label: "Our PGs", to: "/our-pgs" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
-];
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -50,11 +42,6 @@ const Header = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-2">
-          {/* <Button size="sm" asChild className="bg-green-600 hover:bg-green-700 text-white">
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-              <SiWhatsapp className="h-4 w-4" /> WhatsApp
-            </a>
-          </Button> */}
           <Button size="sm" asChild>
             <a href={callLink()}>
               <Phone className="h-4 w-4" /> Call Us
@@ -91,11 +78,6 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex gap-2 pt-3 px-4">
-                {/* <Button size="sm" asChild className="flex-1 bg-green-600 hover:bg-green-700 text-white">
-                  <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-                    <SiWhatsapp className="h-4 w-4" /> WhatsApp
-                  </a>
-                </Button> */}
                 <Button size="sm" asChild className="flex-1">
                   <a href={callLink()}>
                     <Phone className="h-4 w-4" /> Call Us

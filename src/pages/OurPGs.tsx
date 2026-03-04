@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { PG_PROPERTIES } from "@/data/pgData";
 import PGCard from "@/components/PGCard";
-import ReadyToMoveIn from "@/components/ReadyToMoveIn";
+import ReadyToMoveIn from "@/components/shared/ReadyToMoveIn";
+import { fadeUp } from "@/animations/variants";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.05, duration: 0.5 } }),
-};
+
 
 const OurPGs = () => {
   return (

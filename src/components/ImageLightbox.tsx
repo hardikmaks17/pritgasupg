@@ -60,20 +60,3 @@ const ImageLightbox = ({ images, initialIndex = 0, open, onOpenChange }: ImageLi
 };
 
 export default ImageLightbox;
-
-// Hook for easy usage
-export const useImageLightbox = () => {
-  const [lightbox, setLightbox] = useState<{ open: boolean; images: { src: string; alt: string }[]; index: number }>({
-    open: false,
-    images: [],
-    index: 0,
-  });
-
-  const openLightbox = (images: { src: string; alt: string }[], index = 0) => {
-    setLightbox({ open: true, images, index });
-  };
-
-  const closeLightbox = () => setLightbox((prev) => ({ ...prev, open: false }));
-
-  return { lightbox, openLightbox, closeLightbox };
-};

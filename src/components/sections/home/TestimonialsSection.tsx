@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, Quote, ArrowRight } from "lucide-react";
 import { TESTIMONIALS, mainReviewLink } from "@/data/pgData";
 import { Button } from "@/components/ui/button";
+import SectionTitle from "@/components/shared/SectionTitle";
 
-const TestimonialSlider = () => {
+const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -34,12 +35,7 @@ const TestimonialSlider = () => {
   return (
     <section className="py-16 bg-muted overflow-hidden">
       <div className="container">
-        <div className="text-center mb-10">
-          <span className="inline-block bg-accent text-secondary text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
-            Reviews
-          </span>
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-secondary">What Our Residents Say</h2>
-        </div>
+        <SectionTitle badge="Reviews" title="What Our Residents Say" />
 
         <div className="relative max-w-2xl mx-auto">
           {/* Navigation */}
@@ -112,7 +108,9 @@ const TestimonialSlider = () => {
 
           <div className="mt-10 text-center">
             <Button color="primary" asChild>
-              <a href={mainReviewLink()} target="_blank" rel="noopener noreferrer">Read all our reviews<ArrowRight className="ml-1 h-4 w-4" /></a>
+              <a href={mainReviewLink()} target="_blank" rel="noopener noreferrer">
+                Read all our reviews<ArrowRight className="ml-1 h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>
@@ -121,4 +119,4 @@ const TestimonialSlider = () => {
   );
 };
 
-export default TestimonialSlider;
+export default TestimonialsSection;
