@@ -77,7 +77,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-3 p-4 bg-background rounded-lg">
-                    <MapPin className="h-5 w-5 text-secondary mt-0.5" />
+                    <MapPin className="h-5 w-5 shrink-0 text-secondary mt-0.5" />
                     <div>
                       <p className="font-semibold text-sm">Address</p>
                       <p className="text-sm text-muted-foreground">{BRAND.area}</p>

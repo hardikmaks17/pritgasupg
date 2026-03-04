@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { MapPin, Phone, ChevronLeft, CheckCircle, GraduationCap, Building2, HeartPulse, Bus, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, ChevronLeft, CheckCircle, GraduationCap, Building2, HeartPulse, Bus, ShoppingBag, ArrowRight } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { DateInput } from "@/components/ui/date";
@@ -188,7 +188,7 @@ const PGDetail = () => {
               <div className="rounded-lg overflow-hidden shadow-sm">
                 <iframe
                   title={`${pg.name} Location`}
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14688.682!2d72.4993!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b4922b3b3e1%3A0x4b63b1f3e0c3c8a0!2sSatellite%2C%20Ahmedabad%2C%20Gujarat%20380015!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  src={pg.googleMap.embedUrl}
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
@@ -196,6 +196,15 @@ const PGDetail = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
+              </div>
+              <div className="mt-3 flex justify-start">
+                <Button variant="outline" color="primary" asChild className="text-xs gap-1.5">
+                  <a href={pg.googleMap.link} target="_blank" rel="noopener noreferrer">
+                    <MapPin className="h-3.5 w-3.5" />
+                    Open in Google Maps
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>

@@ -63,6 +63,10 @@ export interface PGProperty {
   startingPrice: number;
   availability: AvailabilityStatus;
   nearbyLocations: NearbyLocation[];
+  googleMap: {
+    link: string;
+    embedUrl: string;
+  };
 }
 
 const defaultNearby: NearbyLocation[] = [
@@ -88,6 +92,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
   {
     id: "jodhpur-kunj-23",
@@ -100,6 +108,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
   {
     id: "jodhpur-kunj-29",
@@ -112,6 +124,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
   {
     id: "arun-prakash-a1",
@@ -124,6 +140,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
   {
     id: "arun-prakash-b33",
@@ -136,6 +156,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
   {
     id: "arun-prakash-b34",
@@ -148,6 +172,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
   {
     id: "sarthi-c43",
@@ -160,6 +188,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
   {
     id: "vasupujya-10",
@@ -172,6 +204,10 @@ export const PG_PROPERTIES: PGProperty[] = [
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
+    googleMap: {
+      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
+    },
   },
 ];
 
