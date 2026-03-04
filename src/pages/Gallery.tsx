@@ -2,11 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { GALLERY_IMAGES } from "@/data/pgData";
 import ReadyToMoveIn from "@/components/ReadyToMoveIn";
+import ImageLightbox, { useImageLightbox } from "@/components/ImageLightbox";
 
 const CATEGORIES = ["all", "rooms", "building", "facilities", "food"] as const;
 
 const Gallery = () => {
   const [active, setActive] = useState<string>("all");
+  const { lightbox, openLightbox, closeLightbox } = useImageLightbox();
 
   const allImages = Object.entries(GALLERY_IMAGES).flatMap(([cat, imgs]) =>
     imgs.map((img) => ({ ...img, category: cat }))
@@ -46,7 +48,11 @@ const Gallery = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.03 }}
-                className="aspect-square rounded-lg overflow-hidden bg-accent"
+                className="aspect-square rounded-lg overflow-hidden bg-accent cursor-pointer"
+                onClick={() => openLightbox(
+                  filtered.map((fi) => ({ src: fi.src, alt: fi.alt })),
+                  i
+                )}
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </motion.div>
@@ -56,6 +62,13 @@ const Gallery = () => {
       </section>
 
       <ReadyToMoveIn />
+
+      <ImageLightbox
+        images={lightbox.images}
+        initialIndex={lightbox.index}
+        open={lightbox.open}
+        onOpenChange={closeLightbox}
+      />
     </>
   );
 };

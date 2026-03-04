@@ -87,37 +87,41 @@ const Contact = () => {
               </motion.div>
             </div>
 
-            {/* Inquiry Form */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-              <Card>
-                <CardContent className="pt-6">
-                  <h2 className="text-xl font-heading font-bold text-secondary mb-4">Send Us a Message</h2>
-                  {submitted ? (
-                    <div className="text-center py-12">
-                      <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-3" />
-                      <p className="font-heading font-semibold text-lg">Message Sent!</p>
-                      <p className="text-sm text-muted-foreground">We'll get back to you shortly.</p>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div>
-                        <Label htmlFor="name">Name</Label>
-                        <Input id="name" placeholder="Your name" required />
-                      </div>
-                      <div>
-                        <Label htmlFor="phone">Phone</Label>
-                        <Input id="phone" type="tel" placeholder="Your phone number" required />
-                      </div>
-                      <div>
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea id="message" placeholder="How can we help you?" rows={4} required />
-                      </div>
-                      <Button type="submit" className="w-full">Send Message</Button>
-                    </form>
-                  )}
-                </CardContent>
-              </Card>
-            </motion.div>
+            {/* Sticky Inquiry Form */}
+            <div>
+              <div className="lg:sticky lg:top-24">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+                  <Card>
+                    <CardContent className="pt-6">
+                      <h2 className="text-xl font-heading font-bold text-secondary mb-4">Send Us a Message</h2>
+                      {submitted ? (
+                        <div className="text-center py-12">
+                          <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-3" />
+                          <p className="font-heading font-semibold text-lg">Message Sent!</p>
+                          <p className="text-sm text-muted-foreground">We'll get back to you shortly.</p>
+                        </div>
+                      ) : (
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                          <div>
+                            <Label htmlFor="name">Name</Label>
+                            <Input id="name" placeholder="Your name" required />
+                          </div>
+                          <div>
+                            <Label htmlFor="phone">Phone</Label>
+                            <Input id="phone" type="tel" placeholder="Your phone number" required />
+                          </div>
+                          <div>
+                            <Label htmlFor="message">Message</Label>
+                            <Textarea id="message" placeholder="How can we help you?" rows={4} required />
+                          </div>
+                          <Button type="submit" className="w-full">Send Message</Button>
+                        </form>
+                      )}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

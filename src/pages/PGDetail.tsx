@@ -14,6 +14,7 @@ import {
 } from "@/data/pgData";
 import AvailabilityBadge from "@/components/AvailabilityBadge";
 import ReadyToMoveIn from "@/components/ReadyToMoveIn";
+import ImageLightbox, { useImageLightbox } from "@/components/ImageLightbox";
 
 const nearbyIcons: Record<string, React.ReactNode> = {
   college: <GraduationCap className="h-4 w-4" />,
@@ -28,6 +29,8 @@ const PGDetail = () => {
   const pg = PG_PROPERTIES.find((p) => p.id === id);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedPg, setSelectedPg] = useState(id || "");
+  const [selectedRoom, setSelectedRoom] = useState("");
+  const { lightbox, openLightbox, closeLightbox } = useImageLightbox();
 
   if (!pg) {
     return (
@@ -43,6 +46,8 @@ const PGDetail = () => {
     setFormSubmitted(true);
     setTimeout(() => setFormSubmitted(false), 3000);
   };
+
+  const galleryImages = pg.images.map((src, i) => ({ src, alt: `${pg.name} - Photo ${i + 1}` }));
 
   return (
     <>
@@ -64,20 +69,23 @@ const PGDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Image Carousel */}
-            <div className="px-10">
+            {/* Image Carousel - arrows absolute */}
+            <div className="relative">
               <Carousel opts={{ loop: true }}>
                 <CarouselContent>
                   {pg.images.map((src, i) => (
                     <CarouselItem key={i}>
-                      <div className="aspect-video rounded-lg overflow-hidden bg-accent">
+                      <div
+                        className="aspect-video rounded-lg overflow-hidden bg-accent cursor-pointer"
+                        onClick={() => openLightbox(galleryImages, i)}
+                      >
                         <img src={src} alt={`${pg.name} - Photo ${i + 1}`} className="w-full h-full object-cover" />
                       </div>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="absolute left-3 top-1/2 -translate-y-1/2" />
+                <CarouselNext className="absolute right-3 top-1/2 -translate-y-1/2" />
               </Carousel>
             </div>
 
@@ -87,12 +95,12 @@ const PGDetail = () => {
               <p className="text-muted-foreground">{pg.description}. Located in the heart of Satellite, Ahmedabad, this PG offers a comfortable and secure living environment with all modern amenities.</p>
             </div>
 
-            {/* Pricing */}
+            {/* Pricing - no selectable box */}
             <div>
               <h2 className="text-xl font-heading font-bold text-secondary mb-4">Room Types & Pricing</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {ROOM_TYPES.map((r, i) => (
-                  <Card key={i} className={i === 0 ? "border-2 border-secondary" : ""}>
+                  <Card key={i} className="border border-border">
                     <CardContent className="pt-4 space-y-1">
                       <h3 className="font-heading font-semibold">{r.type}</h3>
                       <p className="text-sm text-muted-foreground">{r.sharing} · {r.acType}</p>
@@ -216,6 +224,21 @@ const PGDetail = () => {
                         </SelectContent>
                       </Select>
                     </div>
+                    <div>
+                      <Label htmlFor="room-type">Interested Room Type</Label>
+                      <Select value={selectedRoom} onValueChange={setSelectedRoom}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select room type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {ROOM_TYPES.map((r, i) => (
+                            <SelectItem key={i} value={`${r.sharing}-${r.acType}`}>
+                              {r.type} · {r.sharing} · {r.acType} — ₹{r.price.toLocaleString()}/mo
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
                     <Button type="submit" className="w-full">Submit Enquiry</Button>
                   </form>
                 )}
@@ -244,6 +267,13 @@ const PGDetail = () => {
       </div>
 
       <ReadyToMoveIn />
+
+      <ImageLightbox
+        images={lightbox.images}
+        initialIndex={lightbox.index}
+        open={lightbox.open}
+        onOpenChange={closeLightbox}
+      />
     </>
   );
 };
