@@ -1,3 +1,12 @@
+import pgRoom1 from "@/assets/pg-room-1.jpg";
+import pgRoom2 from "@/assets/pg-room-2.jpg";
+import pgRoom3 from "@/assets/pg-room-3.jpg";
+import pgBuilding1 from "@/assets/pg-building-1.jpg";
+import pgBuilding2 from "@/assets/pg-building-2.jpg";
+import pgDining from "@/assets/pg-dining.jpg";
+import pgFacility from "@/assets/pg-facility-1.jpg";
+import pgFood from "@/assets/pg-food.jpg";
+
 export const BRAND = {
   name: "Pritgasu PG Services",
   tagline: "Premium PG Accommodation in Satellite, Ahmedabad",
@@ -53,7 +62,7 @@ const defaultNearby: NearbyLocation[] = [
   { type: "market", name: "Satellite Market", distance: "0.5 km" },
 ];
 
-const defaultImages = Array.from({ length: 6 }, () => "/placeholder.svg");
+const pgImages = [pgRoom1, pgRoom2, pgRoom3, pgBuilding1, pgDining, pgFacility];
 
 export const PG_PROPERTIES: PGProperty[] = [
   {
@@ -62,8 +71,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "JK-23",
     address: "23, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
     description: "Spacious 5 BHK Bunglow with premium amenities",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgBuilding1,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
@@ -74,8 +83,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "JK-11",
     address: "11, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
     description: "Well-maintained PG with homely atmosphere",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgRoom1,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
@@ -86,8 +95,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "JK-29",
     address: "29, Jodhpur Kunj Society, Satellite, Ahmedabad 380015",
     description: "Comfortable PG in prime Jodhpur Kunj location",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgRoom2,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
@@ -98,8 +107,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "AP-B34",
     address: "B 34, Third Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
     description: "Third floor flat with great ventilation and views",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgRoom3,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Fully Occupied",
     nearbyLocations: defaultNearby,
@@ -110,8 +119,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "AP-B33",
     address: "B 33, Third Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
     description: "Well-furnished rooms with modern amenities",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgDining,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
@@ -122,8 +131,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "AP-A1",
     address: "A 1, Ground Floor, Arunprakash Society, Satellite, Ahmedabad 380015",
     description: "Convenient ground floor access with all facilities",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgBuilding2,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
@@ -134,8 +143,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "SA-C43",
     address: "C 43, Sarthi Avenue, Satellite, Ahmedabad 380015",
     description: "Modern PG in Sarthi Avenue complex",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgFacility,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
@@ -146,8 +155,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "VP-10",
     address: "10, Vasupujya Row House, Satellite, Ahmedabad 380015",
     description: "Row house PG with spacious common areas",
-    image: "/placeholder.svg",
-    images: defaultImages,
+    image: pgRoom1,
+    images: pgImages,
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
@@ -256,8 +265,21 @@ export const HOUSE_RULES = [
 ];
 
 export const GALLERY_IMAGES = {
-  rooms: Array.from({ length: 6 }, (_, i) => ({ id: `room-${i + 1}`, src: "/placeholder.svg", alt: `PG Room ${i + 1}` })),
-  building: Array.from({ length: 4 }, (_, i) => ({ id: `building-${i + 1}`, src: "/placeholder.svg", alt: `Building ${i + 1}` })),
-  facilities: Array.from({ length: 4 }, (_, i) => ({ id: `facility-${i + 1}`, src: "/placeholder.svg", alt: `Facility ${i + 1}` })),
-  food: Array.from({ length: 4 }, (_, i) => ({ id: `food-${i + 1}`, src: "/placeholder.svg", alt: `Food ${i + 1}` })),
+  rooms: [
+    { id: "room-1", src: pgRoom1, alt: "PG Room - 2 Sharing" },
+    { id: "room-2", src: pgRoom2, alt: "PG Room - AC Single" },
+    { id: "room-3", src: pgRoom3, alt: "PG Room - 3 Sharing" },
+  ],
+  building: [
+    { id: "building-1", src: pgBuilding1, alt: "PG Building Exterior" },
+    { id: "building-2", src: pgBuilding2, alt: "PG Row House Complex" },
+  ],
+  facilities: [
+    { id: "facility-1", src: pgFacility, alt: "Clean Bathroom" },
+    { id: "facility-2", src: pgDining, alt: "Dining Area" },
+  ],
+  food: [
+    { id: "food-1", src: pgFood, alt: "Gujarati Thali" },
+    { id: "food-2", src: pgDining, alt: "Dining Hall" },
+  ],
 };

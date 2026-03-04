@@ -2,16 +2,18 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Home, Snowflake, UtensilsCrossed, Wifi, MapPin, Shield, Phone, MessageCircle,
-  Bed, Tv, Droplets, Flame, Car, Star, ChevronRight,
+  Bed, Tv, Droplets, Flame, Car, ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   BRAND, PG_PROPERTIES, ROOM_TYPES, FACILITIES, MEAL_PLAN,
-  HIGHLIGHTS, TESTIMONIALS, whatsappLink, callLink,
+  HIGHLIGHTS, whatsappLink, callLink,
 } from "@/data/pgData";
 import AvailabilityBadge from "@/components/AvailabilityBadge";
 import ReadyToMoveIn from "@/components/ReadyToMoveIn";
+import TestimonialSlider from "@/components/TestimonialSlider";
+import ImageLightbox, { useImageLightbox } from "@/components/ImageLightbox";
 
 const iconMap: Record<string, React.ReactNode> = {
   Home: <Home className="h-6 w-6" />,
@@ -49,6 +51,8 @@ const SectionTitle = ({ badge, title, subtitle }: { badge?: string; title: strin
 );
 
 const Index = () => {
+  const { lightbox, openLightbox, closeLightbox } = useImageLightbox();
+
   return (
     <>
       {/* Hero */}
@@ -99,7 +103,10 @@ const Index = () => {
             {PG_PROPERTIES.map((pg, i) => (
               <motion.div key={pg.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
-                  <div className="aspect-video bg-accent overflow-hidden relative">
+                  <div
+                    className="aspect-video bg-accent overflow-hidden relative cursor-pointer"
+                    onClick={() => openLightbox(pg.images.map((src, j) => ({ src, alt: `${pg.name} - ${j + 1}` })), 0)}
+                  >
                     <img src={pg.image} alt={pg.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     <AvailabilityBadge status={pg.availability} className="absolute top-2 right-2" />
                   </div>
@@ -187,27 +194,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-muted">
-        <div className="container">
-          <SectionTitle badge="Reviews" title="What Our Residents Say" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {TESTIMONIALS.map((t, i) => (
-              <motion.div key={t.name} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <Card className="h-full">
-                  <CardContent className="pt-6 space-y-3">
-                    <div className="flex gap-0.5">{Array.from({ length: t.rating }).map((_, j) => (<Star key={j} className="h-4 w-4 fill-primary text-primary" />))}</div>
-                    <p className="text-sm text-muted-foreground italic">"{t.text}"</p>
-                    <div>
-                      <p className="text-sm font-semibold">{t.name}</p>
-                      <p className="text-xs text-muted-foreground">{t.role}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialSlider />
 
       {/* Location Map */}
       <section className="py-16 bg-background">
@@ -225,6 +212,13 @@ const Index = () => {
 
       {/* CTA */}
       <ReadyToMoveIn />
+
+      <ImageLightbox
+        images={lightbox.images}
+        initialIndex={lightbox.index}
+        open={lightbox.open}
+        onOpenChange={closeLightbox}
+      />
     </>
   );
 };
