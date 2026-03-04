@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { SiInstagram, SiFacebook, SiWhatsapp, SiGoogle } from "react-icons/si";
-import { BRAND, CONTACTS, SOCIAL_LINKS } from "@/data/pgData";
+import { BRAND, CONTACTS, SOCIAL_LINKS, callLink } from "@/data/pgData";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -56,15 +56,21 @@ const Footer = () => (
           <ul className="space-y-3 text-sm opacity-80">
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-primary" />
-              <span>{CONTACTS.sudhir.name}: {CONTACTS.sudhir.label}</span>
+              <a href={callLink("sudhir")} className="hover:text-primary transition-colors">
+                {CONTACTS.sudhir.name}: {CONTACTS.sudhir.label}
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-primary" />
-              <span>{CONTACTS.gayatri.name}: {CONTACTS.gayatri.label}</span>
+              <a href={callLink("gayatri")} className="hover:text-primary transition-colors">
+                {CONTACTS.gayatri.name}: {CONTACTS.gayatri.label}
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-primary" />
-              <span>{BRAND.email}</span>
+              <a href={`mailto:${BRAND.email}`} className="hover:text-primary transition-colors">
+                {BRAND.email}
+              </a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />

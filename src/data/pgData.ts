@@ -31,8 +31,8 @@ export const mainReviewLink = () =>
   "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6";
 
 export const SOCIAL_LINKS = {
-  instagram: "#",
-  facebook: "#",
+  instagram: "https://instagram.com/pritgasu_pg",
+  facebook: "https://www.facebook.com/Pritgasupgservices/",
   whatsapp: whatsappLink(),
   maps: mainReviewLink(),
 };

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  Home, Snowflake, UtensilsCrossed, Wifi, MapPin, Shield, Phone,
+  Home, Snowflake, UtensilsCrossed, Wifi, MapPin, Shield,
   Bed, Tv, Droplets, Flame, Car, ChevronRight,
+  Info,
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
@@ -151,9 +152,9 @@ const Index = () => {
             ))}
           </div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mt-12 flex justify-center max-w-3xl mx-auto">
-            <div className="bg-muted rounded-md px-5 py-3 flex items-center gap-4 text-sm text-muted-foreground border border-border/40 shadow-sm max-w-fit">
-              <UtensilsCrossed className="h-4 w-4 text-secondary shrink-0" />
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mt-6 sm:mt-12 flex justify-center max-w-3xl mx-auto">
+            <div className="bg-muted rounded-md px-5 py-3 flex gap-4 text-sm text-muted-foreground border border-border/40 shadow-sm max-w-fit">
+              <Info className="h-4 w-4 mt-1 text-secondary shrink-0" />
               <span>All meals are freshly prepared in a hygienic kitchen. The menu may be updated occasionally based on seasonal ingredients and feedback from our residents to maintain variety.</span>
             </div>
           </motion.div>
@@ -185,7 +186,7 @@ const Index = () => {
               <motion.div key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="h-full">
                 <Card className={`h-full flex flex-col text-center hover:shadow-lg transition-shadow bg-background ${i === 1 ? "border-2 border-secondary shadow-md" : "border border-border/60 shadow-sm"}`}>
                   <CardContent className="p-6 flex flex-col flex-grow">
-                    <div className="min-h-[28px] mb-2 flex items-center justify-center">
+                    <div className="sm:min-h-[28px] mb-2 flex items-center justify-center">
                       {i === 1 && (
                         <span className="inline-flex bg-secondary text-secondary-foreground text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                           Most Popular
