@@ -353,27 +353,34 @@ export const HIGHLIGHTS = [
 
 export const TESTIMONIALS = [
   {
-    name: "Rahul Patel",
-    role: "IT Professional",
-    text: "Best PG in Satellite area! The food is amazing and the rooms are very clean. Sudhir bhai and Gayatri ben take great care of all residents.",
+    name: "Vishal Singh",
+    text: "Very nice PG in a good location, I am staying here since last 2 yrs and they provided fully furnished AC rooms, Wi-Fi, clothes washing, and fridge etc facilities. The overall environment is very pleasant and comfortable. The owner is very supportive, and Maharaj ji prepares amazing food — his saying, “JUST TASTE IT DON'T WASTE IT” truly reflects the care he puts into every meal.",
     rating: 5,
   },
   {
-    name: "Priya Sharma",
-    role: "Student",
-    text: "I've been staying here for 2 years. The homely food and WiFi are excellent. Highly recommended for students!",
+    name: "Manas Suryarao",
+    text: `#GreatService.
+I have been living in this PG for almost around 3 years, and my experience has been very good. The service is excellent, the environment is comfortable, and the management is very supportive. It feels like a convenient place to stay. Highly recommended for anyone looking for a good PG.`,
     rating: 5,
   },
   {
-    name: "Amit Desai",
-    role: "Working Professional",
-    text: "Very affordable and well-maintained PG. The location is very convenient — close to ISCON and SP Ring Road.",
-    rating: 4,
+    name: "Sonagra Savan",
+    text: `I had a wonderful experience staying at Prigasu PG. The rooms are clean, well-maintained, and very comfortable, making it feel just like home. The housekeeping and hygiene standards are excellent, which is very important for a peaceful stay.
+
+The food quality is fresh, tasty, and served on time every day. The facilities like Wi-Fi, power backup, security, and laundry are reliable and convenient. The management and staff are very supportive, polite, and always ready to help with any issue. If you are in Ahmedabad and need home like environments come to pritgasu`,
+    rating: 5,
   },
   {
-    name: "Sneha Joshi",
-    role: "MBA Student",
-    text: "The facilities are top-notch for the price. Clean rooms, good food, and friendly management. Feels like home!",
+    name: "Krishi Mehta",
+    text: `This PG is a fantastic find! The owners are incredibly friendly and treat everyone like family, creating a warm, safe environment. The home-cooked food is delicious and hygienic, while the services are top-notch with daily cleaning.
+Having free Wi-Fi and laundry included in such affordable rates is a huge plus for students and professionals. It's a clean, well-managed, and welcoming place that offers incredible value. I have been here for long. Highly recommended for a hassle-free stay!`,
+    rating: 5,
+  },
+  {
+    name: "Ayush Patel",
+    text: `Affordability: This is hands-down one of the most reasonably priced PGs in Ahmedabad.Finding this level of comfort at a minimum price point is nearly impossible elsewhere.
+Top-Notch Service: The management is incredibly responsive. Whether it's a maintenance request or a general query, they handle everything with professional speed and a personal touch.
+All-Inclusive Facilities: They don't cut corners. From high-speed Wi-Fi and laundry to nutritious meals and 24/7 security, all the essential facilities are provided and well-maintained.`,
     rating: 5,
   },
 ];

@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 10000);
     return () => clearInterval(timer);
   }, [next]);
 
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
                   ))}
                 </div>
 
-                <p className="text-base md:text-lg text-muted-foreground italic leading-relaxed mb-6">
+                <p className="text-base md:text-lg text-muted-foreground italic leading-relaxed mb-6 whitespace-pre-line">
                   "{t.text}"
                 </p>
 
@@ -106,7 +106,6 @@ const TestimonialsSection = () => {
                   </div>
                   <div className="text-left">
                     <p className="font-heading font-semibold text-foreground">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.role}</p>
                   </div>
                 </div>
               </motion.div>
