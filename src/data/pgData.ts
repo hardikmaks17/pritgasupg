@@ -7,6 +7,82 @@ import pgDining from "@/assets/pg-dining.jpg";
 import pgFacility from "@/assets/pg-facility-1.jpg";
 import pgFood from "@/assets/pg-food.jpg";
 
+// Arun Prakash A1
+import apA1Facilities1 from "@/assets/images/arun-prakash-a1/ap-a1-facilities-1.jpg";
+import apA1Facilities2 from "@/assets/images/arun-prakash-a1/ap-a1-facilities-2.jpg";
+import apA1Rooms1 from "@/assets/images/arun-prakash-a1/ap-a1-rooms-1.jpg";
+import apA1Rooms2 from "@/assets/images/arun-prakash-a1/ap-a1-rooms-2.jpg";
+import apA1Rooms3 from "@/assets/images/arun-prakash-a1/ap-a1-rooms-3.jpg";
+import apA1Rooms4 from "@/assets/images/arun-prakash-a1/ap-a1-rooms-4.jpg";
+import apA1Thumbnail from "@/assets/images/arun-prakash-a1/ap-a1-thumbnail.jpg";
+
+// Arun Prakash B34
+import apB34Facilities1 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-1.jpg";
+import apB34Facilities2 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-2.jpg";
+import apB34Facilities3 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-3.jpg";
+import apB34Facilities4 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-4.jpg";
+import apB34Facilities5 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-5.jpg";
+import apB34Facilities6 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-6.jpg";
+import apB34Facilities7 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-7.jpg";
+import apB34Facilities8 from "@/assets/images/arun-prakash-b34/ap-b34-facilities-8.jpg";
+import apB34Rooms1 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-1.jpg";
+import apB34Rooms10 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-10.jpg";
+import apB34Rooms11 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-11.jpg";
+import apB34Rooms2 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-2.jpg";
+import apB34Rooms3 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-3.jpg";
+import apB34Rooms4 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-4.jpg";
+import apB34Rooms5 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-5.jpg";
+import apB34Rooms6 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-6.jpg";
+import apB34Rooms7 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-7.jpg";
+import apB34Rooms8 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-8.jpg";
+import apB34Rooms9 from "@/assets/images/arun-prakash-b34/ap-b34-rooms-9.jpg";
+import apB34Thumbnail from "@/assets/images/arun-prakash-b34/ap-b34-thumbnail.jpg";
+
+// Jodhpur Kunj 11
+import jk11Building1 from "@/assets/images/jodhpur-kunj-11/jk11-building-1.jpg";
+import jk11Building2 from "@/assets/images/jodhpur-kunj-11/jk11-building-2.jpg";
+import jk11Rooms1 from "@/assets/images/jodhpur-kunj-11/jk11-rooms-1.jpg";
+import jk11Rooms2 from "@/assets/images/jodhpur-kunj-11/jk11-rooms-2.jpg";
+import jk11Rooms3 from "@/assets/images/jodhpur-kunj-11/jk11-rooms-3.jpg";
+import jk11Rooms4 from "@/assets/images/jodhpur-kunj-11/jk11-rooms-4.jpg";
+import jk11Rooms5 from "@/assets/images/jodhpur-kunj-11/jk11-rooms-5.jpg";
+import jk11Rooms6 from "@/assets/images/jodhpur-kunj-11/jk11-rooms-6.jpg";
+import jk11Thumbnail from "@/assets/images/jodhpur-kunj-11/jk11-thumbnail.jpg";
+
+// Jodhpur Kunj 23
+import jk23Building1 from "@/assets/images/jodhpur-kunj-23/jk23-building-1.jpg";
+import jk23Building2 from "@/assets/images/jodhpur-kunj-23/jk23-building-2.jpg";
+import jk23Building3 from "@/assets/images/jodhpur-kunj-23/jk23-building-3.jpg";
+import jk23Building4 from "@/assets/images/jodhpur-kunj-23/jk23-building-4.jpg";
+import jk23Building5 from "@/assets/images/jodhpur-kunj-23/jk23-building-5.jpg";
+import jk23Facilities1 from "@/assets/images/jodhpur-kunj-23/jk23-facilities-1.jpg";
+import jk23Facilities2 from "@/assets/images/jodhpur-kunj-23/jk23-facilities-2.jpg";
+import jk23Rooms1 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-1.jpg";
+import jk23Rooms10 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-10.jpg";
+import jk23Rooms11 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-11.jpg";
+import jk23Rooms2 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-2.jpg";
+import jk23Rooms3 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-3.jpg";
+import jk23Rooms4 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-4.jpg";
+import jk23Rooms5 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-5.jpg";
+import jk23Rooms6 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-6.jpg";
+import jk23Rooms7 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-7.jpg";
+import jk23Rooms8 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-8.jpg";
+import jk23Rooms9 from "@/assets/images/jodhpur-kunj-23/jk23-rooms-9.jpg";
+import jk23Thumbnail from "@/assets/images/jodhpur-kunj-23/jk23-thumbnail.jpg";
+
+// Sarthi Avenue C43
+import sa43Facilities1 from "@/assets/images/sarthi-avenue-c43/sa43-facilities-1.jpg";
+import sa43Facilities2 from "@/assets/images/sarthi-avenue-c43/sa43-facilities-2.jpg";
+import sa43Facilities3 from "@/assets/images/sarthi-avenue-c43/sa43-facilities-3.jpg";
+import sa43Facilities4 from "@/assets/images/sarthi-avenue-c43/sa43-facilities-4.jpg";
+import sa43Facilities5 from "@/assets/images/sarthi-avenue-c43/sa43-facilities-5.jpg";
+import sa43Facilities6 from "@/assets/images/sarthi-avenue-c43/sa43-facilities-6.jpg";
+import sa43Facilities7 from "@/assets/images/sarthi-avenue-c43/sa43-facilities-7.jpg";
+import sa43Rooms1 from "@/assets/images/sarthi-avenue-c43/sa43-rooms-1.jpg";
+import sa43Rooms2 from "@/assets/images/sarthi-avenue-c43/sa43-rooms-2.jpg";
+import sa43Rooms3 from "@/assets/images/sarthi-avenue-c43/sa43-rooms-3.jpg";
+import sa43Thumbnail from "@/assets/images/sarthi-avenue-c43/sa43-thumbnail.jpg";
+
 export const BRAND = {
   name: "Pritgasu PG Services",
   tagline: "Affordable PG Accommodation in Satellite, Ahmedabad",
@@ -87,8 +163,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "JK-11",
     address: "11, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Well-maintained PG with homely atmosphere",
-    image: pgRoom1,
-    images: pgImages,
+    image: jk11Thumbnail,
+    images: [jk11Building1, jk11Building2, jk11Rooms1, jk11Rooms2, jk11Rooms3, jk11Rooms4, jk11Rooms5, jk11Rooms6],
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
@@ -103,8 +179,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "JK-23",
     address: "23, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Spacious 5 BHK Bunglow with premium amenities",
-    image: pgBuilding1,
-    images: pgImages,
+    image: jk23Thumbnail,
+    images: [jk23Building1, jk23Building2, jk23Building3, jk23Building4, jk23Building5, jk23Facilities1, jk23Facilities2, jk23Rooms1, jk23Rooms10, jk23Rooms11, jk23Rooms2, jk23Rooms3, jk23Rooms4, jk23Rooms5, jk23Rooms6, jk23Rooms7, jk23Rooms8, jk23Rooms9],
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
@@ -135,8 +211,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "AP-A1",
     address: "A-1, Ground Floor, Arun Prakash Flats, Nr Saibaba Temple, Nr Mocca, Satellite, Ahmedabad, 380015.",
     description: "Convenient ground floor access with all facilities",
-    image: pgBuilding2,
-    images: pgImages,
+    image: apA1Thumbnail,
+    images: [apA1Facilities1, apA1Facilities2, apA1Rooms1, apA1Rooms2, apA1Rooms3, apA1Rooms4],
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
@@ -167,8 +243,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "AP-B34",
     address: "B-33, Third Floor, Arun Prakash Flats, Nr Saibaba Temple, Nr Mocca, Satellite, Ahmedabad, 380015.",
     description: "Third floor flat with great ventilation and views",
-    image: pgRoom3,
-    images: pgImages,
+    image: apB34Thumbnail,
+    images: [apB34Facilities1, apB34Facilities2, apB34Facilities3, apB34Facilities4, apB34Facilities5, apB34Facilities6, apB34Facilities7, apB34Facilities8, apB34Rooms1, apB34Rooms10, apB34Rooms11, apB34Rooms2, apB34Rooms3, apB34Rooms4, apB34Rooms5, apB34Rooms6, apB34Rooms7, apB34Rooms8, apB34Rooms9],
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
@@ -183,8 +259,8 @@ export const PG_PROPERTIES: PGProperty[] = [
     shortName: "SA-C43",
     address: "C-43, Sarthi Avenue, Nr Le Meridien Hotel, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Modern PG in Sarthi Avenue complex",
-    image: pgFacility,
-    images: pgImages,
+    image: sa43Thumbnail,
+    images: [sa43Facilities1, sa43Facilities2, sa43Facilities3, sa43Facilities4, sa43Facilities5, sa43Facilities6, sa43Facilities7, sa43Rooms1, sa43Rooms2, sa43Rooms3],
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
