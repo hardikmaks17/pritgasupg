@@ -254,7 +254,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     },
   },
   {
-    id: "sarthi-c43",
+    id: "sarthi-avenue-c43",
     name: "Pritgasu PG — Sarthi Avenue C43",
     shortName: "SA-C43",
     address: "C-43, Sarthi Avenue, Nr Le Meridien Hotel, Ramdev Nagar, Ahmedabad, 380015.",
@@ -270,7 +270,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     },
   },
   {
-    id: "vasupujya-10",
+    id: "vasupujya-row-house-10",
     name: "Pritgasu PG — Vasupujya Row House 10",
     shortName: "VP-10",
     address: "10, Vasupujya Row House, Opp Punchgini Apartment, Opp Satyagraha Chhavni Road, Nr Le Meridien Hotel, Satellite, Ahmedabad, 380015.",
