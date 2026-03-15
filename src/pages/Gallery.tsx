@@ -5,7 +5,7 @@ import ReadyToMoveIn from "@/components/shared/ReadyToMoveIn";
 import ImageLightbox from "@/components/ImageLightbox";
 import useImageLightbox from "@/hooks/useImageLightbox";
 
-const CATEGORIES = ["all", "rooms", "building", "facilities", "food"] as const;
+const CATEGORIES = ["all", "rooms", "building", "facilities"] as const;
 
 const Gallery = () => {
   const [active, setActive] = useState<string>("all");

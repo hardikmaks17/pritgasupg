@@ -16,10 +16,10 @@ const PGCard = ({ pg }: PGCardProps) => {
     <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow group">
       <Link
         to={detailLink}
-        className="aspect-video bg-accent overflow-hidden relative block shrink-0"
+        className="aspect-video bg-accent overflow-hidden relative block shrink-0 h-64"
       >
         <img
-          src={pg.image}
+          src={pg.thumbnail}
           alt={pg.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
