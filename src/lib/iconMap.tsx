@@ -1,6 +1,6 @@
 import {
   Home, Snowflake, UtensilsCrossed, Wifi, MapPin, Shield,
-  Bed, Tv, Droplets, Flame, Car,
+  Bed, Tv, Droplets, Flame, Bike,
   GraduationCap, Building2, HeartPulse, Bus, ShoppingBag,
 } from "lucide-react";
 
@@ -19,7 +19,7 @@ export const iconMap: Record<string, React.ReactNode> = {
   Flame: <Flame className="h-5 w-5" />,
   SprayCanIcon: <Droplets className="h-5 w-5" />,
   CookingPot: <UtensilsCrossed className="h-5 w-5" />,
-  Car: <Car className="h-5 w-5" />,
+  Bike: <Bike className="h-5 w-5" />,
   WashingMachine: <Droplets className="h-5 w-5" />,
 };
 

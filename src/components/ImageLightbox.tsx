@@ -43,12 +43,12 @@ const ImageLightbox = ({ images, initialIndex = 0, open, onOpenChange }: ImageLi
           />
 
           {images.length > 1 && (
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+            <div className="absolute bottom-4 left-0 w-full flex flex-wrap justify-center gap-1.5 px-8 z-50">
               {images.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`w-2 h-2 rounded-full transition-colors ${i === current ? "bg-white" : "bg-white/40"}`}
+                  className={`w-2 h-2 rounded-full transition-colors shrink-0 ${i === current ? "bg-white" : "bg-white/40"}`}
                 />
               ))}
             </div>

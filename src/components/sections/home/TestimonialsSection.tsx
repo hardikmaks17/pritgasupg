@@ -113,12 +113,12 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex flex-wrap justify-center gap-2 mt-6 px-4">
             {TESTIMONIALS.map((_, i) => (
               <button
                 key={i}
                 onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
+                className={`h-2.5 rounded-full transition-all duration-300 shrink-0 ${
                   i === current ? "w-8 bg-secondary" : "w-2.5 bg-secondary/25"
                 }`}
               />

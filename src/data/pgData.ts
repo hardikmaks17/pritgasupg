@@ -160,10 +160,10 @@ export interface PGProperty {
 const defaultNearby: NearbyLocation[] = [
   { type: "college", name: "Gujarat University", distance: "3 km" },
   { type: "college", name: "LD Engineering College", distance: "4 km" },
-  { type: "office", name: "ISCON Mega Mall", distance: "1.5 km" },
+  { type: "office", name: "ISCON Mega Mall", distance: "0.5 km" },
   { type: "hospital", name: "Sterling Hospital", distance: "2 km" },
-  { type: "transport", name: "Jodhpur Cross Roads BRTS", distance: "1 km" },
-  { type: "market", name: "Satellite Market", distance: "0.5 km" },
+  { type: "transport", name: "Ramdev Nagar BRTS", distance: "0.3 km" },
+  { type: "transport", name: "Thaltej Metro Station", distance: "4 km" },
 ];
 
 const pgImages = [pgRoom1, pgRoom2, pgRoom3, pgBuilding1, pgBuilding2, pgDining, pgFacility];
@@ -302,7 +302,7 @@ export const PG_PROPERTIES: PGProperty[] = [
 export const FAQ_ITEMS: FAQItem[] = [
   { question: "What is the minimum stay duration?", answer: "The minimum stay duration is 1 month. We offer flexible lease terms for students and working professionals." },
   { question: "Is food included in the rent?", answer: "Yes! Three home-cooked meals (breakfast, lunch, and dinner) are included in the monthly rent." },
-  { question: "What are the payment options?", answer: "We accept UPI, bank transfer, and cash payments. Rent is due on the 1st of every month." },
+  { question: "What are the payment options?", answer: "We accept UPI, bank transfer, and cash payments. Rent is due on the 7th of every month." },
   { question: "Is there a security deposit?", answer: "Yes, a refundable security deposit of 1 month's rent is required at the time of move-in." },
   { question: "Are visitors allowed?", answer: "Visitors are allowed in common areas during daytime hours only. Overnight guests are not permitted." },
   { question: "What is the gate closing time?", answer: "The gate closes at 11:00 PM. Late entry can be arranged by informing the management in advance." },
@@ -335,7 +335,7 @@ export const FACILITIES = [
   { icon: "UtensilsCrossed", label: "Dining Table" },
   { icon: "Snowflake", label: "AC / Non-AC" },
   { icon: "CookingPot", label: "Food (3 Meals)" },
-  { icon: "Car", label: "Parking" },
+  { icon: "Bike", label: "Parking" },
   { icon: "WashingMachine", label: "Laundry" },
 ];
 
