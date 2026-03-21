@@ -118,11 +118,11 @@ export const callLink = (who: "sudhir" | "gayatri" = "gayatri") =>
 export const pgLink = (id: string) => `/pg/${id}`;
 
 export const mainReviewLink = () => 
-  "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6";
+  "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7";
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/pritgasu_pg",
-  facebook: "https://www.facebook.com/Pritgasupgservices/",
+  instagram: "https://instagram.com/pritgasupg.in",
+  facebook: "https://www.facebook.com/pritgasupg",
   whatsapp: whatsappLink(),
   maps: mainReviewLink(),
 };
@@ -181,7 +181,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
@@ -197,7 +197,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Available",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
@@ -213,7 +213,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Available",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
@@ -229,7 +229,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Available",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
@@ -245,7 +245,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
@@ -261,7 +261,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
@@ -277,7 +277,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Available",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
@@ -293,7 +293,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
     googleMap: {
-      link: "https://maps.app.goo.gl/aUAFMAQGdq3VNdFz6",
+      link: "https://maps.app.goo.gl/ifEUpDiCYn8fbfJR7",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5007.851902648633!2d72.5091385!3d23.0313558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bc01a66dfa3%3A0xe238241f9cd7559c!2sPritgasu%20PG%20Services%20-%20B33%20Arun%20Prakash%20Flats%20%7C%20Satellite!5e1!3m2!1sen!2sin!4v1772648019042!5m2!1sen!2sin",
     },
   },
