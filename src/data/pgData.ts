@@ -7,15 +7,43 @@ import pgDining from "@/assets/pg-dining.jpg";
 import pgFacility from "@/assets/pg-facility-1.jpg";
 
 // Jodhpur Kunj 29
+import jk29Building1 from "@/assets/images/jodhpur-kunj-29/jk29-building-1.png";
+import jk29Building2 from "@/assets/images/jodhpur-kunj-29/jk29-building-2.png";
+import jk29Facilities1 from "@/assets/images/jodhpur-kunj-29/jk29-facilities-1.png";
+import jk29Facilities2 from "@/assets/images/jodhpur-kunj-29/jk29-facilities-2.png";
+import jk29Facilities3 from "@/assets/images/jodhpur-kunj-29/jk29-facilities-3.png";
+import jk29Facilities4 from "@/assets/images/jodhpur-kunj-29/jk29-facilities-4.png";
 import jk29Rooms1 from "@/assets/images/jodhpur-kunj-29/jk29-rooms-1.jpeg";
+import jk29Rooms2 from "@/assets/images/jodhpur-kunj-29/jk29-rooms-2.jpeg";
+import jk29Rooms3 from "@/assets/images/jodhpur-kunj-29/jk29-rooms-3.jpeg";
+import jk29Rooms4 from "@/assets/images/jodhpur-kunj-29/jk29-rooms-4.png";
+import jk29Rooms5 from "@/assets/images/jodhpur-kunj-29/jk29-rooms-5.png";
+import jk29Rooms6 from "@/assets/images/jodhpur-kunj-29/jk29-rooms-6.png";
 import jk29Thumbnail from "@/assets/images/jodhpur-kunj-29/jk29-thumbnail.jpeg";
 
 // Arun Prakash B33
+import apB33Facilities1 from "@/assets/images/arun-prakash-b33/ap-b33-facilities-1.jpeg";
 import apB33Rooms1 from "@/assets/images/arun-prakash-b33/ap-b33-rooms-1.jpeg";
+import apB33Rooms2 from "@/assets/images/arun-prakash-b33/ap-b33-rooms-2.jpeg";
+import apB33Rooms3 from "@/assets/images/arun-prakash-b33/ap-b33-rooms-3.jpeg";
+import apB33Rooms4 from "@/assets/images/arun-prakash-b33/ap-b33-rooms-4.jpeg";
+import apB33Rooms5 from "@/assets/images/arun-prakash-b33/ap-b33-rooms-5.jpeg";
+import apB33Rooms6 from "@/assets/images/arun-prakash-b33/ap-b33-rooms-6.jpeg";
 import apB33Thumbnail from "@/assets/images/arun-prakash-b33/ap-b33-thumbnail.jpeg";
 
 // Vasupujya Row House 10
+import vp10Building1 from "@/assets/images/vasupujya-row-house-10/vp10-building-1.jpeg";
+import vp10Building2 from "@/assets/images/vasupujya-row-house-10/vp10-building-2.jpeg";
+import vp10Building3 from "@/assets/images/vasupujya-row-house-10/vp10-building-3.jpeg";
+import vp10Building4 from "@/assets/images/vasupujya-row-house-10/vp10-building-4.jpeg";
+import vp10Facilities1 from "@/assets/images/vasupujya-row-house-10/vp10-facilities-1.jpeg";
 import vp10Rooms1 from "@/assets/images/vasupujya-row-house-10/vp10-rooms-1.jpeg";
+import vp10Rooms2 from "@/assets/images/vasupujya-row-house-10/vp10-rooms-2.jpeg";
+import vp10Rooms3 from "@/assets/images/vasupujya-row-house-10/vp10-rooms-3.jpeg";
+import vp10Rooms4 from "@/assets/images/vasupujya-row-house-10/vp10-rooms-4.jpeg";
+import vp10Rooms5 from "@/assets/images/vasupujya-row-house-10/vp10-rooms-5.jpeg";
+import vp10Rooms6 from "@/assets/images/vasupujya-row-house-10/vp10-rooms-6.jpeg";
+import vp10Rooms7 from "@/assets/images/vasupujya-row-house-10/vp10-rooms-7.jpeg";
 import vp10Thumbnail from "@/assets/images/vasupujya-row-house-10/vp10-thumbnail.jpeg";
 
 
@@ -208,7 +236,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "29, Jodhpur Kunj Society, Opp Le Meridien Hotel, Opp Satellite Police Station, Ramdev Nagar, Ahmedabad, 380015.",
     description: "Comfortable PG in prime Jodhpur Kunj location",
     thumbnail: jk29Thumbnail,
-    images: [jk29Rooms1],
+    images: [jk29Building1, jk29Building2, jk29Facilities1, jk29Facilities2, jk29Facilities3, jk29Facilities4, jk29Rooms1, jk29Rooms2, jk29Rooms3, jk29Rooms4, jk29Rooms5, jk29Rooms6],
     startingPrice: 8500,
     availability: "Available",
     nearbyLocations: defaultNearby,
@@ -240,7 +268,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "B-33, Third Floor, Arun Prakash Flats, Nr Saibaba Temple, Nr Mocca, Satellite, Ahmedabad, 380015.",
     description: "Well-furnished rooms with modern amenities",
     thumbnail: apB33Thumbnail,
-    images: [apB33Rooms1],
+    images: [apB33Facilities1, apB33Rooms1, apB33Rooms2, apB33Rooms3, apB33Rooms4, apB33Rooms5, apB33Rooms6],
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
@@ -288,7 +316,7 @@ export const PG_PROPERTIES: PGProperty[] = [
     address: "10, Vasupujya Row House, Opp Punchgini Apartment, Opp Satyagraha Chhavni Road, Nr Le Meridien Hotel, Satellite, Ahmedabad, 380015.",
     description: "Row house PG with spacious common areas",
     thumbnail: vp10Thumbnail,
-    images: [vp10Rooms1],
+    images: [vp10Building1, vp10Building2, vp10Building3, vp10Building4, vp10Facilities1, vp10Rooms1, vp10Rooms2, vp10Rooms3, vp10Rooms4, vp10Rooms5, vp10Rooms6, vp10Rooms7],
     startingPrice: 8500,
     availability: "Limited Availability",
     nearbyLocations: defaultNearby,
@@ -444,8 +472,24 @@ export const GALLERY_IMAGES = {
     { id: "sa43-r2", src: sa43Rooms2, alt: "Sarthi Avenue C43 Room" },
     { id: "sa43-r3", src: sa43Rooms1, alt: "Sarthi Avenue C43 Room" },
     { id: "jk29-r1", src: jk29Rooms1, alt: "Jodhpur Kunj 29 Room" },
+    { id: "jk29-r2", src: jk29Rooms2, alt: "Jodhpur Kunj 29 Room" },
+    { id: "jk29-r3", src: jk29Rooms3, alt: "Jodhpur Kunj 29 Room" },
+    { id: "jk29-r4", src: jk29Rooms4, alt: "Jodhpur Kunj 29 Room" },
+    { id: "jk29-r5", src: jk29Rooms5, alt: "Jodhpur Kunj 29 Room" },
+    { id: "jk29-r6", src: jk29Rooms6, alt: "Jodhpur Kunj 29 Room" },
     { id: "ap-b33-r1", src: apB33Rooms1, alt: "Arun Prakash B33 Room" },
+    { id: "ap-b33-r2", src: apB33Rooms2, alt: "Arun Prakash B33 Room" },
+    { id: "ap-b33-r3", src: apB33Rooms3, alt: "Arun Prakash B33 Room" },
+    { id: "ap-b33-r4", src: apB33Rooms4, alt: "Arun Prakash B33 Room" },
+    { id: "ap-b33-r5", src: apB33Rooms5, alt: "Arun Prakash B33 Room" },
+    { id: "ap-b33-r6", src: apB33Rooms6, alt: "Arun Prakash B33 Room" },
     { id: "vp10-r1", src: vp10Rooms1, alt: "Vasupujya Row House 10 Room" },
+    { id: "vp10-r2", src: vp10Rooms2, alt: "Vasupujya Row House 10 Room" },
+    { id: "vp10-r3", src: vp10Rooms3, alt: "Vasupujya Row House 10 Room" },
+    { id: "vp10-r4", src: vp10Rooms4, alt: "Vasupujya Row House 10 Room" },
+    { id: "vp10-r5", src: vp10Rooms5, alt: "Vasupujya Row House 10 Room" },
+    { id: "vp10-r6", src: vp10Rooms6, alt: "Vasupujya Row House 10 Room" },
+    { id: "vp10-r7", src: vp10Rooms7, alt: "Vasupujya Row House 10 Room" },
   ],
   building: [
     { id: "jk11-b1", src: jk11Building1, alt: "Jodhpur Kunj 11 Exterior" },
@@ -455,6 +499,12 @@ export const GALLERY_IMAGES = {
     { id: "jk23-b3", src: jk23Building3, alt: "Jodhpur Kunj 23 Exterior" },
     { id: "jk23-b4", src: jk23Building4, alt: "Jodhpur Kunj 23 Exterior" },
     { id: "jk23-b5", src: jk23Building5, alt: "Jodhpur Kunj 23 Exterior" },
+    { id: "jk29-b1", src: jk29Building1, alt: "Jodhpur Kunj 29 Exterior" },
+    { id: "jk29-b2", src: jk29Building2, alt: "Jodhpur Kunj 29 Exterior" },
+    { id: "vp10-b1", src: vp10Building1, alt: "Vasupujya Row House 10 Exterior" },
+    { id: "vp10-b2", src: vp10Building2, alt: "Vasupujya Row House 10 Exterior" },
+    { id: "vp10-b3", src: vp10Building3, alt: "Vasupujya Row House 10 Exterior" },
+    { id: "vp10-b4", src: vp10Building4, alt: "Vasupujya Row House 10 Exterior" },
   ],
   facilities: [
     { id: "ap-a1-f1", src: apA1Facilities1, alt: "Arun Prakash A1 Facility" },
@@ -476,5 +526,11 @@ export const GALLERY_IMAGES = {
     { id: "sa43-f5", src: sa43Facilities5, alt: "Sarthi Avenue C43 Facility" },
     { id: "sa43-f6", src: sa43Facilities6, alt: "Sarthi Avenue C43 Facility" },
     { id: "sa43-f7", src: sa43Facilities7, alt: "Sarthi Avenue C43 Facility" },
+    { id: "ap-b33-f1", src: apB33Facilities1, alt: "Arun Prakash B33 Facility" },
+    { id: "jk29-f1", src: jk29Facilities1, alt: "Jodhpur Kunj 29 Facility" },
+    { id: "jk29-f2", src: jk29Facilities2, alt: "Jodhpur Kunj 29 Facility" },
+    { id: "jk29-f3", src: jk29Facilities3, alt: "Jodhpur Kunj 29 Facility" },
+    { id: "jk29-f4", src: jk29Facilities4, alt: "Jodhpur Kunj 29 Facility" },
+    { id: "vp10-f1", src: vp10Facilities1, alt: "Vasupujya Row House 10 Facility" },
   ],
 };
